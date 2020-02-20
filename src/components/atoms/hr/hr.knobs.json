@@ -1,0 +1,24 @@
+{
+  "hrSize": {
+    "default": "default",
+    "group": "Variant",
+    "label": "Size",
+    "options": {
+      "x-large": "x-large",
+      "large": "large",
+      "default": "default",
+      "small": "small"
+    }
+  },
+  "hrWidth": {
+    "default": 600,
+    "group": "Content",
+    "label": "HR Width",
+    "options": {
+      "range": true,
+      "min": 300,
+      "max": 2560,
+      "step": 1
+    }
+  }
+}

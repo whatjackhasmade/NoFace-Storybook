@@ -1,0 +1,60 @@
+[
+  {
+    "title": "general",
+    "items": [
+      {
+        "icon": null,
+        "label": "Shop",
+        "target": null,
+        "url": "#"
+      },
+      {
+        "icon": null,
+        "label": "About",
+        "target": null,
+        "url": "#"
+      },
+      {
+        "icon": null,
+        "label": "FAQ",
+        "target": null,
+        "url": "#"
+      },
+      {
+        "icon": null,
+        "label": "Contact",
+        "target": null,
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "title": "account",
+    "items": [
+      {
+        "icon": null,
+        "label": "Insights",
+        "target": null,
+        "url": "#"
+      },
+      {
+        "icon": null,
+        "label": "Account",
+        "target": null,
+        "url": "#"
+      },
+      {
+        "icon": "user",
+        "label": "User",
+        "target": null,
+        "url": "#"
+      },
+      {
+        "icon": "bag",
+        "label": "Cart",
+        "target": null,
+        "url": "#"
+      }
+    ]
+  }
+]

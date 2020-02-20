@@ -1,0 +1,32 @@
+{
+  "headerNav": {
+    "default": [
+      {
+        "icon": null,
+        "label": "Shop",
+        "target": null,
+        "url": "#"
+      },
+      {
+        "icon": null,
+        "label": "About",
+        "target": null,
+        "url": "#"
+      },
+      {
+        "icon": null,
+        "label": "FAQ",
+        "target": null,
+        "url": "#"
+      },
+      {
+        "icon": null,
+        "label": "Contact",
+        "target": null,
+        "url": "#"
+      }
+    ],
+    "group": "Content",
+    "label": "Header navigation"
+  }
+}
