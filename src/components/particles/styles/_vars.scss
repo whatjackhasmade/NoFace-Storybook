@@ -1,0 +1,85 @@
+/*///////////////
+/// VARS
+*/ //////////////
+
+/* SPACING UNITS */
+
+$spacing-default: 16px;
+
+$spacing-tiny: $spacing-default/4;
+$spacing-small: $spacing-default/2;
+$spacing-large: $spacing-default * 2;
+$spacing-huge: $spacing-default * 4;
+
+/* BORDERS */
+
+$border-radius-default: 3px;
+
+/* BREAKPOINTS */
+$bp-mobile-small: 320px;
+$bp-mobile: 375px;
+$bp-mobile-large: 440px;
+$bp-tablet: 768px;
+$bp-grid-stack: $bp-tablet;
+$bp-tablet-large: 1024px;
+$bp-desktop: 1400px;
+$bp-desktop-large: 1920px;
+$bp-4k: 2560px;
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+/* COLOURS */
+
+$color-white: #ffffff;
+$color-off-white: #f6f7f9;
+$color-grey-lightest: #dddddd;
+$color-grey-light: #595959;
+$color-grey: #202c39;
+$color-black: #141213;
+
+$color-red: #ea2027;
+$color-red-dark: darken($color-red, 5%);
+
+$color-pink: #ed4c67;
+$color-blue: #0652dd;
+$color-light-blue: #4dd0e1;
+$color-dark-blue: #1b1464;
+
+$color-primary: $color-blue;
+$color-secondary: $color-blue;
+$color-tertiary: $color-dark-blue;
+$color-quaternary: $color-pink;
+
+$vars: (
+	white: $color-white,
+	off-white: $color-off-white,
+	grey-lightest: $color-grey-lightest,
+	grey-light: $color-grey-light,
+	grey: $color-grey,
+	black: $color-black,
+	red: $color-red,
+	red-dark: $color-red-dark,
+	pink: $color-pink,
+	blue: $color-blue,
+	light-blue: $color-light-blue,
+	dark-blue: $color-dark-blue,
+	primary: $color-primary,
+	secondary: $color-secondary,
+	tertiary: $color-tertiary,
+	quaternary: $color-quaternary
+);
+
+/* FONT VARIABLES */
+$font-weight-default: 400;
+$font-weight-bold: 700;
+/* GRID VARIABLES */
+$grid-gap-default: $spacing-large;
+$grid-gap-large: $spacing-large * 1.5;
+$grid-gap-huge: $spacing-huge * 1.5;
+/* SIZE UNITS */
+$heading-height: 100px;
+$mobile-height: 110px;
+$width-content: 900px;
+$z-index-front: 101;

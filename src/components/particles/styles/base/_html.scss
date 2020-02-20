@@ -1,0 +1,20 @@
+/* HTML */
+
+html {
+	font-size: 62.5%;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba($color-black, 0.3);
+	@include var(background-color, white);
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+
+	@include var(background-color, white);
+}
+
+::-webkit-scrollbar-thumb {
+	@include var(background-color, grey);
+}

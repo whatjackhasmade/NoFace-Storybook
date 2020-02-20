@@ -1,0 +1,44 @@
+/*///////////////
+/// TEXT
+*/ //////////////
+
+.text-align {
+	&--left {
+		text-align: left;
+	}
+	&--center {
+		text-align: center;
+	}
+	&--right {
+		text-align: right;
+	}
+}
+
+.text-color {
+	&--white {
+		@include var(color, white);
+	}
+	&--black {
+		@include var(color, black);
+	}
+	&--blue {
+		@include var(color, blue);
+	}
+	&--pink {
+		@include var(color, pink);
+	}
+}
+
+.text--capitalize {
+	text-transform: capitalize;
+}
+.text--uppercase {
+	text-transform: uppercase;
+}
+
+.text--bold,
+.bold,
+strong,
+b {
+	font-weight: 700;
+}

@@ -1,0 +1,19 @@
+/*///////////////
+/// YOUTUBE
+*/ //////////////
+
+.youtube {
+  height: 0;
+  margin: 1.5rem auto;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

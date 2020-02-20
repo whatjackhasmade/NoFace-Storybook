@@ -13,51 +13,30 @@ import Logo from "@assets/images/logo.svg"
 
 import Link from "@atoms/link/link"
 
-const Header = ({
-  booking,
-  homeURL,
-  menus,
-  orderObject,
-  setStage,
-  stage,
-  theme,
-}) => {
+const Header = ({ menus }) => {
   const [menuOpen, toggleMenu] = useState(false)
+  let className = `header`
+  className = menuOpen ? className : `${className} header--closed`
 
   return (
-    <StyledHeader
-      className={
-        menuOpen
-          ? `header header--${theme}`
-          : `header header--${theme} header--closed`
-      }
-      elementTheme={theme}
-    >
-      <div className="header__contents">
-        <div className="header__logo">
-          <Link href={homeURL}>
-            <Logo />
-            <span className="hidden">Makeup &amp; Mane</span>
-          </Link>
-        </div>
-        <button
-          className="header__toggle"
-          onClick={() => {
-            toggleMenu(!menuOpen)
-            if (hasBrowser)
-              document.documentElement.classList.toggle(`scroll--fixed`)
-          }}
-        >
-          <IconBars />
-          {menuOpen ? `Close` : `Open`} Menu
-        </button>
-        {booking ? (
-          <HeaderBooking stage={stage} toggleMenu={toggleMenu} />
-        ) : (
-          <HeaderDefault menu={menus.one} toggleMenu={toggleMenu} />
-        )}
+    <StyledHeader className={className} elementTheme={theme}>
+      <div className="header__logo">
+        <Link href={homeURL}>
+          <Logo />
+          <h5 className="hide">NoFace Website Development</h5>
+        </Link>
       </div>
-      {booking && <HeaderBookingProgress stage={stage} />}
+      <button
+        className="header__toggle"
+        onClick={() => {
+          toggleMenu(!menuOpen)
+          if (hasBrowser)
+            document.documentElement.classList.toggle(`scroll--fixed`)
+        }}
+      >
+        <IconBars />
+        {menuOpen ? `Close` : `Open`} Menu
+      </button>
     </StyledHeader>
   )
 }

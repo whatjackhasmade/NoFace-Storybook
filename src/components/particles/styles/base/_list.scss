@@ -1,0 +1,14 @@
+/* LIST */
+
+ul,
+ol {
+	margin-top: $spacing-default;
+	main & {
+		li {
+			margin-top: 0;
+			~ li {
+				margin-top: $spacing-small;
+			}
+		}
+	}
+}

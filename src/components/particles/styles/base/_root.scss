@@ -1,0 +1,20 @@
+:root {
+	--primary: #{map-get($vars, primary)};
+	--secondary: #{map-get($vars, secondary)};
+	--tertiary: #{map-get($vars, tertiary)};
+	--quaternary: #{map-get($vars, quaternary)};
+
+	--white: #{map-get($vars, white)};
+	--off-white: #{map-get($vars, off-white)};
+	--grey-lightest: #{map-get($vars, grey-lightest)};
+	--grey-light: #{map-get($vars, grey-light)};
+	--grey: #{map-get($vars, grey)};
+	--black: #{map-get($vars, black)};
+
+	--red: #{map-get($vars, red)};
+	--red-dark: #{map-get($vars, red-dark)};
+	--pink: #{map-get($vars, pink)};
+	--blue: #{map-get($vars, blue)};
+	--light-blue: #{map-get($vars, light-blue)};
+	--dark-blue: #{map-get($vars, dark-blue)};
+}
