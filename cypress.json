@@ -1,9 +1,9 @@
 {
-	"baseUrl": "http://localhost:7774/?path=/story/",
-	"env": {
-		"GRAPHQL_API": "https://wp.noface.app/graphql"
-	},
-	"port": 9991,
-	"integrationFolder": "src/components",
-	"testFiles": "**/*.test.*"
+  "baseUrl": "http://localhost:7774/?path=/story/",
+  "env": {
+    "GATSBY_WORDPRESS_API": "https://wp.noface.app/wp/graphql"
+  },
+  "port": 9991,
+  "integrationFolder": "src/components",
+  "testFiles": "**/*.test.*"
 }

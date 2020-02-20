@@ -3,31 +3,8 @@ import { isEmptyObject, generateID } from "@helpers"
 
 import ParseHTML from "./parseHTML"
 
-import TextBreak from "@molecules/text-break/textBreak"
-
-import Archive from "@organisms/archive/archive"
-import Banner from "@organisms/banner/banner"
-import GridGallery from "@organisms/grid/gridGallery"
-import Hero from "@organisms/hero/hero"
-import Logos from "@organisms/logos/logos"
-import Rows from "@organisms/rows/rows"
-import Steps from "@organisms/steps/steps"
-import Team from "@organisms/team/team"
-import TeamArchive from "@organisms/team/archive"
-import Treatments from "@organisms/treatments/treatments"
-
 const components = {
-  "acf/textbreak": TextBreak,
-  "acf/archive": Archive,
-  "acf/banner": Banner,
-  "acf/gridgallery": GridGallery,
-  "acf/hero": Hero,
-  "acf/logos": Logos,
-  "acf/rows": Rows,
-  "acf/services": Treatments,
-  "acf/steps": Steps,
-  "acf/team": Team,
-  "acf/teamarchive": TeamArchive,
+  // "acf/textbreak": TextBreak,
 }
 
 const convertACFProps = component => {
