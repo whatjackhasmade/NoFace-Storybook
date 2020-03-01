@@ -1,4 +1,4 @@
-import { isEmptyObject } from "@helpers"
+import { isEmptyObject } from "helpers"
 
 const isNull = value => {
   return typeof value !== `undefined` && (typeof value !== `object` || !value)

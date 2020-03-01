@@ -1,10 +1,10 @@
 import React from "react"
 
-import ComponentParser from "@particles/componentParser"
-import SEO from "@particles/seo"
+import ComponentParser from "particles/componentParser"
+import SEO from "particles/seo"
 
-import Footer from "@organisms/footer/footer"
-import Header from "@organisms/header/header"
+import Footer from "organisms/footer/footer"
+import Header from "organisms/header/header"
 
 const Page = ({ footerMenus, headerMenus, pageContext }) => {
   if (!pageContext) return null

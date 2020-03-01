@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import device from "@particles/mediaQueries"
+import device from "particles/mediaQueries"
 
-import ButtonReset from "@atoms/button/button.reset"
+import ButtonReset from "atoms/button/button.reset"
 
 const StyledFooter = styled.footer`
   background-color: ${props => props.theme.grey700};

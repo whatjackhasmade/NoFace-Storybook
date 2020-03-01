@@ -3,11 +3,11 @@ import { Container, Row, Col } from "react-grid-system"
 import { Hidden, setConfiguration } from "react-grid-system"
 
 // PARTICLES
-import ParseHTML from "@particles/parseHTML"
-import SEO from "@particles/seo"
+import ParseHTML from "particles/parseHTML"
+import SEO from "particles/seo"
 
-import Footer from "@organisms/footer/footer"
-import Header from "@organisms/header/header"
+import Footer from "organisms/footer/footer"
+import Header from "organisms/header/header"
 
 const Post = ({ footerMenus, headerMenus, pageContext }) => {
   if (!pageContext) return null

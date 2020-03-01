@@ -1,6 +1,6 @@
 import React from "react"
 import { string, node, number } from "prop-types"
-import ParseHTML from "@particles/parseHTML"
+import ParseHTML from "particles/parseHTML"
 
 const Heading = ({ className, children, innerHTML, level, variant }) => {
   level = parseInt(level)

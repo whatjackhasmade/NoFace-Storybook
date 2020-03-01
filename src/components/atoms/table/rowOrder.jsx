@@ -1,8 +1,8 @@
 import React from "react"
-import { prettyDateTime } from "@helpers"
+import { prettyDateTime } from "helpers"
 
-import Badge from "@atoms/badge/badge"
-import Link from "@atoms/link/link"
+import Badge from "atoms/badge/badge"
+import Link from "atoms/link/link"
 
 const RowOrder = ({ order, view }) => {
   const { createdAt, datetime, postcode, contactName, artist, id } = order

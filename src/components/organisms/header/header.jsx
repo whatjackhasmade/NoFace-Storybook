@@ -1,17 +1,13 @@
 import React, { useState } from "react"
 import { arrayOf, number, shape, string } from "prop-types"
-import { hasBrowser } from "@helpers"
+import { hasBrowser } from "helpers"
 
 import StyledHeader from "./header.styles"
 
-import HeaderBooking from "./parts/headerBooking"
-import HeaderBookingProgress from "./parts/headerBookingProgress"
-import HeaderDefault from "./parts/headerDefault"
+import IconBars from "assets/icons/fa/solid/bars.svg"
+import Logo from "assets/images/logo.svg"
 
-import IconBars from "@assets/icons/fa/bars.svg"
-import Logo from "@assets/images/logo.svg"
-
-import Link from "@atoms/link/link"
+import Link from "atoms/link/link"
 
 const Header = ({ menus }) => {
   const [menuOpen, toggleMenu] = useState(false)
@@ -19,9 +15,9 @@ const Header = ({ menus }) => {
   className = menuOpen ? className : `${className} header--closed`
 
   return (
-    <StyledHeader className={className} elementTheme={theme}>
+    <StyledHeader className={className}>
       <div className="header__logo">
-        <Link href={homeURL}>
+        <Link href="/">
           <Logo />
           <h5 className="hide">NoFace Website Development</h5>
         </Link>

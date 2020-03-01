@@ -4,13 +4,8 @@ import { action } from "@storybook/addon-actions"
 import { DocsPage, DocsContainer } from "@storybook/addon-docs/blocks"
 import { withKnobs } from "@storybook/addon-knobs"
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport"
-import { ThemeProvider } from "styled-components"
 
-import ApolloWrapper from "../src/components/@particles/apollo/wrapper"
-import ApplicationState from "../src/components/@particles/context/applicationState"
-import GlobalStyle from "../src/components/@particles/globalStyle"
-import Layout from "../src/components/@particles/layout"
-import ThemeDefault from "../src/components/@particles/themeDefault"
+import RootWrapper from "../src/components/particles/rootWrapper"
 
 // Option defaults:
 addParameters({
@@ -35,16 +30,7 @@ addParameters({
 // automatically import all files ending in *.stories.js
 configure(require.context("../src/components", true, /\.stories\.js$/), module)
 
-const GlobalDecorator = storyFn => (
-  <ApolloWrapper>
-    <ApplicationState>
-      <ThemeProvider theme={ThemeDefault}>
-        <GlobalStyle />
-        <div className="wrapper">{storyFn()}</div>
-      </ThemeProvider>
-    </ApplicationState>
-  </ApolloWrapper>
-)
+const GlobalDecorator = storyFn => <RootWrapper>{storyFn()}</RootWrapper>
 
 addDecorator(GlobalDecorator)
 addDecorator(withKnobs)

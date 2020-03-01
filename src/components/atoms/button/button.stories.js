@@ -5,7 +5,7 @@ import Button from "./button"
 import knobData from "./button.knobs.json"
 const { btnBackground, btnText } = knobData
 
-import ThemeDefault from "../../@particles/themeDefault"
+import ThemeDefault from "particles/themeDefault"
 
 const alertText = e => {
   e.preventDefault()

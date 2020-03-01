@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import device from "@particles/mediaQueries"
+import device from "particles/mediaQueries"
 
 const StyledHeader = styled.header`
   align-items: center;

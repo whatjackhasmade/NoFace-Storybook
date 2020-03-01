@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import device from "@particles/mediaQueries";
+import styled from "styled-components"
+import device from "particles/mediaQueries"
 
-const StyledIndex = styled.section``;
+const StyledIndex = styled.section``
 
-export default StyledIndex;
+export default StyledIndex

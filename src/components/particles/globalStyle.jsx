@@ -2,10 +2,10 @@ import { createGlobalStyle } from "styled-components"
 import "normalize.css/normalize.css"
 
 import device from "./mediaQueries"
-import Fonts from "./fonts"
+// import Fonts from "./fonts"
 import ThemeDefault from "./themeDefault"
 
-import ButtonReset from "@atoms/button/button.reset"
+import ButtonReset from "atoms/button/button.reset"
 
 const spacingSizes = [
   `0`,
@@ -63,63 +63,6 @@ const paddingUtilities = d => {
 }
 
 const GlobalStyle = createGlobalStyle`
-	@font-face {
-		font-family: 'Gilroy';
-		src: url(${Fonts.GilroyLightEOT}); /* IE9 Compat Modes */
-		src: url(${Fonts.GilroyLightEOTIE}) format('embedded-opentype'), /* IE6-IE8 */
-			url(${Fonts.GilroyLightWOFF2}) format('woff2'), /* Super Modern Browsers */
-			url(${Fonts.GilroyLightWOFF}) format('woff'), /* Pretty Modern Browsers */
-			url(${Fonts.GilroyLightTTF})  format('truetype'); /* Safari, Android, iOS */
-		font-style: normal;
-		font-weight: 300;
-	}
-
-	@font-face {
-		font-family: 'Gilroy';
-		src: url(${Fonts.GilroyRegularEOT}); /* IE9 Compat Modes */
-		src: url(${Fonts.GilroyRegularEOTIE}) format('embedded-opentype'), /* IE6-IE8 */
-			url(${Fonts.GilroyRegularWOFF2}) format('woff2'), /* Super Modern Browsers */
-			url(${Fonts.GilroyRegularWOFF}) format('woff'), /* Pretty Modern Browsers */
-			url(${Fonts.GilroyRegularTTF})  format('truetype'); /* Safari, Android, iOS */
-		font-style: normal;
-		font-weight: normal;
-	}
-
-	@font-face {
-		font-family: 'Gilroy';
-		src: url(${Fonts.GilroyMediumEOT}); /* IE9 Compat Modes */
-		src: url(${Fonts.GilroyMediumEOTIE}) format('embedded-opentype'), /* IE6-IE8 */
-			url(${Fonts.GilroyMediumWOFF2}) format('woff2'), /* Super Modern Browsers */
-			url(${Fonts.GilroyMediumWOFF}) format('woff'), /* Pretty Modern Browsers */
-			url(${Fonts.GilroyMediumTTF})  format('truetype'); /* Safari, Android, iOS */
-		font-style: normal;
-		font-weight: 500;
-	}
-
-	@font-face {
-		font-family: 'Gilroy';
-		src: url(${Fonts.GilroyBoldEOT}); /* IE9 Compat Modes */
-		src: url(${Fonts.GilroyBoldEOTIE}) format('embedded-opentype'), /* IE6-IE8 */
-			url(${Fonts.GilroyBoldWOFF2}) format('woff2'), /* Super Modern Browsers */
-			url(${Fonts.GilroyBoldWOFF}) format('woff'), /* Pretty Modern Browsers */
-			url(${Fonts.GilroyBoldTTF})  format('truetype'); /* Safari, Android, iOS */
-		font-style: normal;
-		font-weight: 700;
-	}
-
-	@font-face {
-		font-family: 'Gilroy';
-		src: url(${Fonts.GilroyExtraBoldEOT}); /* IE9 Compat Modes */
-		src: url(${
-      Fonts.GilroyExtraBoldEOTIE
-    }) format('embedded-opentype'), /* IE6-IE8 */
-			url(${Fonts.GilroyExtraBoldWOFF2}) format('woff2'), /* Super Modern Browsers */
-			url(${Fonts.GilroyExtraBoldWOFF}) format('woff'), /* Pretty Modern Browsers */
-			url(${Fonts.GilroyExtraBoldTTF})  format('truetype'); /* Safari, Android, iOS */
-		font-style: normal;
-		font-weight: 800;
-	}
-
 	/* apply a natural box layout model to all elements, but allowing components to change */
 	*, *:before, *:after {
 		box-sizing: inherit;

@@ -3,7 +3,7 @@ import { bool, func, node, string } from "prop-types"
 
 import StyledButton from "./button.styles"
 
-import Link from "@atoms/link/link"
+import Link from "atoms/link/link"
 
 const Button = props => {
   const { children, className, disabled, href } = props

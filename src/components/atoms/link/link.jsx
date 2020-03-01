@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "gatsby-link"
 import { bool, func, node, string } from "prop-types"
-import { getHostName, isInternal } from "@helpers"
+import { getHostName, isInternal } from "helpers"
 
 const AnchorLink = ({
   children,

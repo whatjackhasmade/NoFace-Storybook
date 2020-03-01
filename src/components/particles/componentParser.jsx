@@ -1,5 +1,5 @@
 import React from "react"
-import { isEmptyObject, generateID } from "@helpers"
+import { isEmptyObject, generateID } from "helpers"
 
 import ParseHTML from "./parseHTML"
 
