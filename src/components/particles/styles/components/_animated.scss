@@ -1,44 +1,44 @@
 /* ANIMATED */
 
 .scroll-downs {
-	display: none;
-	height: 55px;
-	margin: 0 auto;
-	width: 34px;
+  display: none;
+  height: 55px;
+  margin: 0 auto;
+  width: 34px;
 
-	@include bp-min-width($bp-lg) {
-		display: block;
-	}
+  @include bp-min-width($bp-lg) {
+    display: block;
+  }
 }
 .mousey {
-	width: 3px;
-	padding: 10px 15px;
-	height: 35px;
-	border: 2px solid #fff;
-	border-radius: 25px;
-	opacity: 0.75;
-	box-sizing: content-box;
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
 }
 .scroller {
-	width: 3px;
-	height: 10px;
-	border-radius: 25%;
-	background-color: #fff;
-	animation-name: scroll;
-	animation-duration: 5s;
-	animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
-	animation-iteration-count: infinite;
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 5s;
+  animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+  animation-iteration-count: infinite;
 }
 @keyframes scroll {
-	0% {
-		opacity: 0;
-	}
-	10% {
-		transform: translateY(0);
-		opacity: 1;
-	}
-	100% {
-		transform: translateY(15px);
-		opacity: 0;
-	}
+  0% {
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
 }

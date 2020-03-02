@@ -667,33 +667,10 @@ const GlobalStyle = createGlobalStyle`
 	.display--inline { display: inline; }
 	.display--inline-block { display: inline-block; }
 
-	/* Utility Classes */
-	${marginUtilities(`bottom`)}
-	${marginUtilities(`left`)}
-	${marginUtilities(`right`)}
-	${marginUtilities(`top`)}
-	${paddingUtilities(`all`)}
-
-
-	.my-1 {
-		margin-bottom: ${props => props.theme.spacingTiny} !important;
-		margin-top: ${props => props.theme.spacingTiny} !important;
-	}
-	.my-2 {
-		margin-bottom: ${props => props.theme.spacingSmall} !important;
-		margin-top: ${props => props.theme.spacingSmall} !important;
-	}
-	.my-3 {
-		margin-bottom: ${props => props.theme.spacingDefault} !important;
-		margin-top: ${props => props.theme.spacingDefault} !important;
-	}
-	.my-4 {
-		margin-bottom: ${props => props.theme.spacingLarge} !important;
-		margin-top: ${props => props.theme.spacingLarge} !important;
-	}
-	.my-5 {
-		margin-bottom: ${props => props.theme.spacingHuge} !important;
-		margin-top: ${props => props.theme.spacingHuge} !important;
+	.grid {
+		margin: 0 auto;
+		max-width: 1300px;
+		padding: 0 30px;
 	}
 `
 

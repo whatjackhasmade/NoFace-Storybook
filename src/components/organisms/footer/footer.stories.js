@@ -6,9 +6,7 @@ import knobData from "./footer.knobs.json"
 const { footerNav } = knobData
 
 export const standardFooter = () => (
-  <Footer
-    navigation={array(footerNav.label, footerNav.default, footerNav.group)}
-  />
+  <Footer menus={array(footerNav.label, footerNav.default, footerNav.group)} />
 )
 
 export default {

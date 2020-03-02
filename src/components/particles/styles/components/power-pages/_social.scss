@@ -1,51 +1,51 @@
 /* SOCIAL */
 
 .socialShare {
-	display: none;
+  display: none;
 }
 
 @include bp-min-width(1366px) {
-	.socialShare {
-		align-items: center;
-		display: flex;
-		justify-content: center;
-		left: $spacing-large;
-		padding: $spacing-default;
-		position: fixed;
-		top: $spacing-large;
+  .socialShare {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: $spacing-large;
+    padding: $spacing-default;
+    position: fixed;
+    top: $spacing-large;
 
-		@include var(background-color, white);
-	}
-	.socialShare ul {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		margin: 0;
-		padding-left: 0;
-		width: 100%;
+    @include var(background-color, white);
+  }
+  .socialShare ul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding-left: 0;
+    width: 100%;
 
-		list-style: none;
-	}
+    list-style: none;
+  }
 
-	.socialShare li {
-		height: 24px;
-		width: 24px;
-	}
+  .socialShare li {
+    height: 24px;
+    width: 24px;
+  }
 
-	.socialShare li ~ li {
-		margin-top: $spacing-small;
-	}
+  .socialShare li ~ li {
+    margin-top: $spacing-small;
+  }
 
-	.socialShare__facebook svg {
-		fill: #3b5998;
-	}
+  .socialShare__facebook svg {
+    fill: #3b5998;
+  }
 
-	.socialShare__linkedin svg {
-		fill: #0077b5;
-	}
+  .socialShare__linkedin svg {
+    fill: #0077b5;
+  }
 
-	.socialShare__twitter svg {
-		fill: #1da1f2;
-	}
+  .socialShare__twitter svg {
+    fill: #1da1f2;
+  }
 }

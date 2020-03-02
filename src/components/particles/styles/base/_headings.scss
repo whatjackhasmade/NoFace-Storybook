@@ -6,13 +6,13 @@ h3,
 h4,
 h5,
 h6 {
-	line-height: 1.25;
-	margin-bottom: $spacing-default;
-	margin-top: $spacing-default;
+  line-height: 1.25;
+  margin-bottom: $spacing-default;
+  margin-top: $spacing-default;
 
-	font-weight: 700;
-	letter-spacing: 0.5px;
-	text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 $heading-1: 48px;
@@ -25,67 +25,67 @@ $heading-tiny: 12px;
 
 h1,
 .title--h1 {
-	margin-bottom: 24px;
-	margin-top: 24px;
+  margin-bottom: 24px;
+  margin-top: 24px;
 
-	font-size: $heading-2;
-	font-weight: 700;
+  font-size: $heading-2;
+  font-weight: 700;
 }
 
 h2,
 .title--h2 {
-	font-size: $heading-3;
-	font-weight: 700;
+  font-size: $heading-3;
+  font-weight: 700;
 }
 
 h3,
 .title--h3 {
-	font-size: $heading-4;
+  font-size: $heading-4;
 }
 
 h4,
 .title--h4 {
-	font-size: $heading-5;
+  font-size: $heading-5;
 }
 
 h5,
 .title--h5 {
-	font-size: $heading-6;
+  font-size: $heading-6;
 }
 
 h6,
 .title--h6 {
-	font-size: $heading-tiny;
+  font-size: $heading-tiny;
 }
 
 @include bp-min-width($bp-lg) {
-	h1,
-	.title--h1 {
-		margin-bottom: 24px;
-		margin-top: 40px;
+  h1,
+  .title--h1 {
+    margin-bottom: 24px;
+    margin-top: 40px;
 
-		font-size: $heading-1;
-	}
-	h2,
-	.title--h2 {
-		font-size: $heading-2;
-	}
-	h3,
-	.title--h3 {
-		font-size: $heading-3;
-	}
-	h4,
-	.title--h4 {
-		font-size: $heading-4;
-	}
+    font-size: $heading-1;
+  }
+  h2,
+  .title--h2 {
+    font-size: $heading-2;
+  }
+  h3,
+  .title--h3 {
+    font-size: $heading-3;
+  }
+  h4,
+  .title--h4 {
+    font-size: $heading-4;
+  }
 
-	h5,
-	.title--h5 {
-		font-size: $heading-5;
-	}
+  h5,
+  .title--h5 {
+    font-size: $heading-5;
+  }
 
-	h6,
-	.title--h6 {
-		font-size: $heading-6;
-	}
+  h6,
+  .title--h6 {
+    font-size: $heading-6;
+  }
 }

@@ -10,16 +10,16 @@
  */
 
 @mixin bp-min-width($width) {
-	@media (min-width: $width) {
-		@content;
-	}
+  @media (min-width: $width) {
+    @content;
+  }
 }
 
 /**
  * Only use in rare circumstances, favour `bp-min-width`.
  */
 @mixin bp-max-width($width) {
-	@media (max-width: $width) {
-		@content;
-	}
+  @media (max-width: $width) {
+    @content;
+  }
 }

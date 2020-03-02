@@ -1,17 +1,15 @@
 /*///////////////
 /// PALETTE
-*///////////////
+*/ //////////////
 
 .palette {
-
 }
 
 .palette__item {
-    width: 100%;
-    margin-bottom: $spacing-small;
+  width: 100%;
+  margin-bottom: $spacing-small;
 
-    @include bp-min-width($bp-tablet) {
-        margin-right: $spacing-default;
-    }
+  @include bp-min-width($bp-tablet) {
+    margin-right: $spacing-default;
+  }
 }
- 

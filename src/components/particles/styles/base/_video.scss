@@ -5,37 +5,37 @@ video {
 }
 
 .video--full {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-	z-index: -100;
-	right: 0;
-	bottom: 0;
-	background-color: $color-black;
-	overflow: hidden;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -100;
+  right: 0;
+  bottom: 0;
+  background-color: $color-black;
+  overflow: hidden;
 }
 
 .video--dark {
-	&:before {
-		content: "";
-		display: block;
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		z-index: 49;
-		top: 0;
-		left: 0;
-		background-color: rgba($color-black, 0.5);
-	}
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 49;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, 0.5);
+  }
 }
 
 .video--full-container {
-	position: absolute;
-	min-height: calc(90vh - 110px);
-	background-color: $color-black;
-	width: 100%;
+  position: absolute;
+  min-height: calc(90vh - 110px);
+  background-color: $color-black;
+  width: 100%;
 
-	@include bp-min-width($bp-mobile-large) {
-		min-height: 90vh;
-	}
+  @include bp-min-width($bp-mobile-large) {
+    min-height: 90vh;
+  }
 }

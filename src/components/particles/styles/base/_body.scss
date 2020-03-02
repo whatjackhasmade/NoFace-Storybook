@@ -1,16 +1,16 @@
 /* BODY */
 
 body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-	background-color: white;
-	color: $color-black;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1.6rem;
+  background-color: white;
+  color: $color-black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
 
-	@include bp-min-width($bp-tablet) {
-		font-size: 2rem;
-	}
+  @include bp-min-width($bp-tablet) {
+    font-size: 2rem;
+  }
 }

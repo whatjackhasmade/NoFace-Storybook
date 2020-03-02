@@ -3,50 +3,50 @@
 */ //////////////
 
 .case-study {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: $spacing-large;
-	text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-large;
+  text-align: left;
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin-top: $spacing-default;
-		margin-bottom: $spacing-default;
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: $spacing-default;
+    margin-bottom: $spacing-default;
+  }
 
-	a,
-	p {
-		font-size: 16px;
-	}
+  a,
+  p {
+    font-size: 16px;
+  }
 
-	p {
-		color: $color-grey-light;
-	}
+  p {
+    color: $color-grey-light;
+  }
 
-	&__thumbnail {
-		img {
-			transform: scale(1);
-			transition: 0.2s transform ease;
-		}
-	}
+  &__thumbnail {
+    img {
+      transform: scale(1);
+      transition: 0.2s transform ease;
+    }
+  }
 
-	@include active-states() {
-		.case-study__thumbnail {
-			img {
-				transform: scale(1.02);
-			}
-		}
-	}
+  @include active-states() {
+    .case-study__thumbnail {
+      img {
+        transform: scale(1.02);
+      }
+    }
+  }
 }
 
 .single-case-study {
-	.background-color--black {
-		a:not(.link--cta) {
-			color: $color-light-blue;
-		}
-	}
+  .background-color--black {
+    a:not(.link--cta) {
+      color: $color-light-blue;
+    }
+  }
 }

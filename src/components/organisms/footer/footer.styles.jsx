@@ -4,17 +4,32 @@ import device from "particles/mediaQueries"
 import ButtonReset from "atoms/button/button.reset"
 
 const StyledFooter = styled.footer`
-  background-color: ${props => props.theme.grey700};
-  color: ${props => props.theme.grey400};
+  padding: 48px 0 100px;
+
+  background-color: ${props => props.theme.grey900};
+  color: ${props => props.theme.grey300};
+
+  @media ${device.md} {
+    padding: 80px 0 160px;
+  }
 
   a {
     display: block;
     transition: 0.2s all ease;
 
+    svg {
+      fill: ${props => props.theme.grey300};
+    }
+
     &:active,
     &:focus,
     &:hover {
+      color: ${props => props.theme.white};
       text-decoration: none;
+
+      svg {
+        fill: ${props => props.theme.white};
+      }
     }
 
     &:focus {
@@ -23,62 +38,18 @@ const StyledFooter = styled.footer`
     }
   }
 
-  form {
-    display: flex;
-    width: 100%;
+  a + a {
+    margin-top: 6px;
+  }
 
-    @media ${device.sm} {
-      flex-direction: column;
-    }
-
-    @media ${device.md} {
-      flex-direction: row;
-    }
-
-    button {
-      ${ButtonReset}
-
-      flex-shrink: 0;
-      padding: 8px 12px;
-
-      background-color: ${props => props.theme.white};
-      border-radius: 0;
-      color: ${props => props.theme.black};
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-      text-align: center;
-
-      @media ${device.sm} {
-        padding: 14px 16px 16px;
-      }
-
-      @media ${device.md} {
-        padding: 8px 12px;
-      }
-    }
-
-    input {
-      display: block;
-      margin-top: 0;
-      min-height: 40px;
-      padding: ${props =>
-        props.theme.spacingSmall + ` ` + props.theme.spacingDefault};
-      width: 100%;
-
-      background-color: transparent;
-      border: 2px solid ${props => props.theme.white};
-      border-radius: 0;
-      color: ${props => props.theme.white};
-      font-weight: 500;
-      line-height: 1.5;
-      transition: border-color 0.25s, box-shadow 0.25s;
-
-      &:active,
-      &:focus {
-        border: 2px solid ${props => props.theme.grey200};
-      }
-    }
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 16px;
   }
 
   h1,
@@ -86,134 +57,124 @@ const StyledFooter = styled.footer`
   h3,
   h4,
   h5,
-  h6,
-  p,
-  .footer__logo {
+  h6 {
+    margin: 0 0 8px;
+
     color: ${props => props.theme.white};
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
-  h4 {
-    margin-bottom: 8px;
-    margin-top: 0;
+  nav {
+    flex: 1;
+    margin-top: 32px;
 
-    font-size: 14px;
+    @media ${device.md} {
+      margin-top: 0;
+      margin-left: 32px;
+    }
   }
 
-  p {
-    font-size: 14px;
+  .footer__company,
+  .footer__social {
+    display: flex;
   }
 
-  .footer__contents > nav {
-    a {
-      &:active,
-      &:focus,
-      &:hover {
-        color: ${props => props.theme.white};
-      }
-    }
+  .footer__company {
+    align-items: center;
 
-    &:not(:last-of-type) {
-      & > * {
-        & + * {
-          margin-top: 16px;
-        }
-      }
+    @media ${device.md} {
+      flex-direction: column;
+      align-items: flex-start;
     }
+  }
 
-    &:last-of-type {
-      @media ${device.sm} {
-        margin-left: auto;
-        max-width: 278px;
-        padding-left: 30px;
-      }
+  .footer__copyright {
+    margin-left: 16px;
+
+    color: ${props => props.theme.white};
+    font-weight: 700;
+  }
+
+  .footer__logo {
+    min-width: 50px;
+    position: relative;
+    width: 50px;
+
+    path {
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+      animation-name: draw;
+      animation-timing-function: linear;
+      animation-timing-function: ease;
+
+      animation-fill-mode: forwards;
+      fill: none;
+      stroke: white;
+      stroke-dasharray: 142.47500610351562px;
+      stroke-dashoffset: 142.47500610351562px;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+      stroke-width: 10;
     }
+  }
 
-    + nav {
-      margin-top: 48px;
-
-      @media ${device.xs} {
-        margin-top: 0;
-      }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
     }
+  }
+
+  .footer__menus {
+    max-width: 800px;
 
     @media ${device.xs} {
-      width: calc(50% - 20px);
+      display: flex;
+      flex-wrap: wrap;
 
-      &:nth-child(even) {
-        margin-left: 40px;
-      }
-
-      &:nth-of-type(1n + 3) {
-        margin-top: 48px;
-      }
-    }
-
-    @media ${device.sm} {
-      width: auto;
-
-      &:nth-of-type(1n + 3) {
-        margin-left: 40px;
-        margin-top: 0;
+      nav {
+        flex: unset;
+        width: 50%;
       }
     }
 
     @media ${device.md} {
-      &:nth-of-type(1n + 3),
-      &:nth-child(even) {
-        margin-left: 92px;
-      }
-
-      &:last-of-type {
-        margin-left: auto;
-      }
-    }
-  }
-
-  span {
-    display: block;
-  }
-
-  svg {
-    height: 20px;
-
-    fill: ${props => props.theme.white};
-  }
-
-  .error p {
-    color: ${props => props.theme.black};
-  }
-
-  .footer__contents {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 1216px;
-    padding: 48px 15px;
-
-    @media ${device.xs} {
-      flex-direction: row;
-      flex-wrap: wrap;
-      padding: 92px 30px;
-    }
-
-    @media ${device.sm} {
+      flex: 1;
       flex-wrap: nowrap;
-    }
-  }
+      margin-left: auto;
 
-  .footer__logo {
-    font-weight: bold;
-
-    @media ${device.sm} {
-      font-size: 22px;
+      nav {
+        flex: 1;
+        width: auto;
+      }
     }
   }
 
   .footer__social {
+    align-items: center;
     display: flex;
+    margin-top: 0;
+    margin-left: auto;
+
+    @media ${device.md} {
+      margin-top: 12px;
+      margin-left: 0;
+    }
 
     a + a {
-      margin-left: 8px;
+      margin-left: 16px;
+      margin-top: 0;
+    }
+
+    svg {
+      display: block;
+      height: 24px;
+    }
+  }
+
+  .grid {
+    @media ${device.md} {
+      display: flex;
     }
   }
 `

@@ -1,10 +1,10 @@
 /* ANCHOR */
 
 a {
-	color: $color-primary;
-	line-height: 1.45;
+  color: $color-primary;
+  line-height: 1.45;
 
-	@include active-states() {
-		text-decoration: none;
-	}
+  @include active-states() {
+    text-decoration: none;
+  }
 }

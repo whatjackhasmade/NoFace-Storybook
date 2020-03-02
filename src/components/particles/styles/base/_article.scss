@@ -1,204 +1,204 @@
 /* ARTICLE */
 
 article {
-	padding: $spacing-large $spacing-default;
-	> h2,
-	> h3,
-	> h4,
-	> h5 {
-		margin-bottom: 16px;
-		font-weight: 700;
-	}
-	/* Advanced vertical rhythym based off of https://medium.com/@sebastian.eberlein/advanced-vertical-margins-4ac69f032f79 */
-	> * + * {
-		margin-top: 16px;
-	}
-	> h2 + * {
-		margin-top: 24px;
-	}
-	> img + *,
-	> figure + * {
-		margin-top: 32px;
-	}
-	> * + h2 {
-		margin-top: 64px;
-	}
-	> * + h3 {
-		margin-top: 48px;
-	}
-	> * + img {
-		margin-top: 32px;
-	}
-	> * + h4 {
-		margin-top: 48px;
-	}
-	> img + img,
-	> figure + figure {
-		margin-top: 32px;
-	}
-	> h2 + h3 {
-		margin-top: 32px;
-	}
-	> h3 + h4 {
-		margin-top: 32px;
-	}
-	> *:not(figure):not(img):not(picture):not(.ignore) {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: $width-content;
-	}
-	& > figure,
-	& > img,
-	& > picture,
-	& > .ignore {
-		display: block;
-		margin: $spacing-large auto;
-		max-width: $width-content + 200px;
-		width: 100%;
-		text-align: center;
-	}
-	@include bp-min-width($bp-desktop) {
-		padding: $spacing-huge $spacing-large;
-	}
+  padding: $spacing-large $spacing-default;
+  > h2,
+  > h3,
+  > h4,
+  > h5 {
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  /* Advanced vertical rhythym based off of https://medium.com/@sebastian.eberlein/advanced-vertical-margins-4ac69f032f79 */
+  > * + * {
+    margin-top: 16px;
+  }
+  > h2 + * {
+    margin-top: 24px;
+  }
+  > img + *,
+  > figure + * {
+    margin-top: 32px;
+  }
+  > * + h2 {
+    margin-top: 64px;
+  }
+  > * + h3 {
+    margin-top: 48px;
+  }
+  > * + img {
+    margin-top: 32px;
+  }
+  > * + h4 {
+    margin-top: 48px;
+  }
+  > img + img,
+  > figure + figure {
+    margin-top: 32px;
+  }
+  > h2 + h3 {
+    margin-top: 32px;
+  }
+  > h3 + h4 {
+    margin-top: 32px;
+  }
+  > *:not(figure):not(img):not(picture):not(.ignore) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width-content;
+  }
+  & > figure,
+  & > img,
+  & > picture,
+  & > .ignore {
+    display: block;
+    margin: $spacing-large auto;
+    max-width: $width-content + 200px;
+    width: 100%;
+    text-align: center;
+  }
+  @include bp-min-width($bp-desktop) {
+    padding: $spacing-huge $spacing-large;
+  }
 }
 
 .article__intro {
-	padding-top: 81px;
-	position: relative;
-	z-index: 100;
+  padding-top: 81px;
+  position: relative;
+  z-index: 100;
 
-	@include bp-min-width($bp-tablet) {
-		padding-top: 0;
-	}
+  @include bp-min-width($bp-tablet) {
+    padding-top: 0;
+  }
 }
 
 .article--tight {
-	> *:not(figure):not(img):not(picture):not(.ignore) {
-		max-width: $width-content - 100;
-	}
+  > *:not(figure):not(img):not(picture):not(.ignore) {
+    max-width: $width-content - 100;
+  }
 
-	& > figure,
-	& > img,
-	& > picture,
-	& > .ignore {
-		max-width: $width-content + 100px;
-	}
+  & > figure,
+  & > img,
+  & > picture,
+  & > .ignore {
+    max-width: $width-content + 100px;
+  }
 }
 
 .chapters {
-	display: none;
+  display: none;
 
-	@include bp-min-width($bp-desktop) {
-		display: block;
-		left: 20px;
-		position: fixed;
-		top: 0px;
+  @include bp-min-width($bp-desktop) {
+    display: block;
+    left: 20px;
+    position: fixed;
+    top: 0px;
 
-		.chapters__list {
-			left: -400px;
-			position: relative;
-			padding: 0;
+    .chapters__list {
+      left: -400px;
+      position: relative;
+      padding: 0;
 
-			color: $color-black;
-			font-size: 10px;
-			font-weight: $font-weight-bold;
-			opacity: 0;
-			list-style: none;
-			text-transform: uppercase;
-			transition: 0.4s opacity ease, 0.4s left ease;
+      color: $color-black;
+      font-size: 10px;
+      font-weight: $font-weight-bold;
+      opacity: 0;
+      list-style: none;
+      text-transform: uppercase;
+      transition: 0.4s opacity ease, 0.4s left ease;
 
-			& > * {
-				margin-top: $spacing-tiny;
-			}
-		}
+      & > * {
+        margin-top: $spacing-tiny;
+      }
+    }
 
-		a {
-			display: block;
-			max-width: 150px;
+    a {
+      display: block;
+      max-width: 150px;
 
-			color: $color-black;
-			text-decoration: none;
-		}
+      color: $color-black;
+      text-decoration: none;
+    }
 
-		li {
-			opacity: 0.5;
-			transition: 0.2s opacity ease;
+    li {
+      opacity: 0.5;
+      transition: 0.2s opacity ease;
 
-			&.current {
-				opacity: 1;
-				transition: 0.2s opacity ease;
-			}
-		}
-	}
+      &.current {
+        opacity: 1;
+        transition: 0.2s opacity ease;
+      }
+    }
+  }
 
-	@include bp-min-width(1600px) {
-		a {
-			max-width: 300px;
-		}
-	}
+  @include bp-min-width(1600px) {
+    a {
+      max-width: 300px;
+    }
+  }
 }
 
 .chapters__toggle {
-	display: inline-block;
-	padding: 3px;
+  display: inline-block;
+  padding: 3px;
 
-	background: transparent;
-	border: solid black;
-	border-radius: 0;
-	border-width: 0 3px 3px 0;
-	transform: rotate(135deg);
-	transition: 0.4s transform ease;
+  background: transparent;
+  border: solid black;
+  border-radius: 0;
+  border-width: 0 3px 3px 0;
+  transform: rotate(135deg);
+  transition: 0.4s transform ease;
 
-	&:before {
-		display: none;
-	}
+  &:before {
+    display: none;
+  }
 
-	&.active {
-		transform: rotate(315deg);
+  &.active {
+    transform: rotate(315deg);
 
-		& + .chapters__list {
-			left: 0px;
+    & + .chapters__list {
+      left: 0px;
 
-			opacity: 1;
-		}
-	}
+      opacity: 1;
+    }
+  }
 }
 
 .chapter {
-	@include bp-min-width($bp-desktop) {
-		&--h2 {
-			margin-left: $spacing-tiny;
-			margin-top: 14px;
-		}
+  @include bp-min-width($bp-desktop) {
+    &--h2 {
+      margin-left: $spacing-tiny;
+      margin-top: 14px;
+    }
 
-		&--h3 {
-			margin-left: $spacing-tiny * 2;
-		}
+    &--h3 {
+      margin-left: $spacing-tiny * 2;
+    }
 
-		&--h4 {
-			margin-left: $spacing-tiny * 3;
-		}
+    &--h4 {
+      margin-left: $spacing-tiny * 3;
+    }
 
-		&--h5 {
-			margin-left: $spacing-tiny * 4;
-		}
-	}
+    &--h5 {
+      margin-left: $spacing-tiny * 4;
+    }
+  }
 }
 
 .tags {
-	a {
-		border-radius: $border-radius-default;
-		display: inline-block;
-		margin: 0 $spacing-small $spacing-small 0;
-		padding: $spacing-tiny $spacing-small;
-		background-color: $color-blue;
-		color: white;
-		font-size: 1.4rem;
-		text-decoration: none;
-		text-transform: uppercase;
-		transition: 0.2s background-color ease;
-		@include active-states() {
-			background-color: lighten($color-blue, 10%);
-		}
-	}
+  a {
+    border-radius: $border-radius-default;
+    display: inline-block;
+    margin: 0 $spacing-small $spacing-small 0;
+    padding: $spacing-tiny $spacing-small;
+    background-color: $color-blue;
+    color: white;
+    font-size: 1.4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s background-color ease;
+    @include active-states() {
+      background-color: lighten($color-blue, 10%);
+    }
+  }
 }

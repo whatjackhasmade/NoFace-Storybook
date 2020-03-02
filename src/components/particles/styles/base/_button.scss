@@ -6,115 +6,115 @@ input[type="submit"],
 .button,
 .link--action,
 .link--cta {
-	border-radius: $border-radius-default;
-	display: inline-block;
-	padding: $spacing-default $spacing-default * 1.5;
-	position: relative;
+  border-radius: $border-radius-default;
+  display: inline-block;
+  padding: $spacing-default $spacing-default * 1.5;
+  position: relative;
 
-	background: $color-blue;
-	background: linear-gradient(
-		to bottom,
-		lighten($color-blue, 2.5%) 0%,
-		$color-blue 100%
-	);
+  background: $color-blue;
+  background: linear-gradient(
+    to bottom,
+    lighten($color-blue, 2.5%) 0%,
+    $color-blue 100%
+  );
 
-	border: 1px solid $color-blue;
-	color: #ffffff;
-	cursor: pointer;
-	font-size: 2rem;
-	font-weight: $font-weight-bold;
-	letter-spacing: 0.5px;
-	line-height: 3rem;
-	outline: none;
-	text-decoration: none;
-	text-transform: uppercase;
-	transition: 0.2s all ease;
+  border: 1px solid $color-blue;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.5px;
+  line-height: 3rem;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.2s all ease;
 
-	i,
-	svg {
-		margin-left: $spacing-tiny;
-	}
+  i,
+  svg {
+    margin-left: $spacing-tiny;
+  }
 
-	&:before {
-		content: "";
-		display: block;
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
+  &:before {
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 
-		background-color: rgba($color-white, 0);
-		transition: 0.2s background-color ease;
-	}
+    background-color: rgba($color-white, 0);
+    transition: 0.2s background-color ease;
+  }
 
-	@include active-states() {
-		&:before {
-			background-color: rgba($color-white, 0.2);
-		}
-	}
+  @include active-states() {
+    &:before {
+      background-color: rgba($color-white, 0.2);
+    }
+  }
 }
 
 .button--secondary {
-	background: $color-dark-blue;
-	background: linear-gradient(
-		to bottom,
-		lighten($color-dark-blue, 2.5%) 0%,
-		$color-dark-blue 100%
-	);
-	border: 1px $color-dark-blue;
+  background: $color-dark-blue;
+  background: linear-gradient(
+    to bottom,
+    lighten($color-dark-blue, 2.5%) 0%,
+    $color-dark-blue 100%
+  );
+  border: 1px $color-dark-blue;
 }
 
 .button--small {
-	font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 .button--white {
-	background: $color-white;
-	border: none;
-	color: $color-primary;
+  background: $color-white;
+  border: none;
+  color: $color-primary;
 
-	&:before {
-		background-color: rgba($color-primary, 0);
-	}
+  &:before {
+    background-color: rgba($color-primary, 0);
+  }
 
-	@include active-states() {
-		&:before {
-			background-color: rgba($color-primary, 0.1);
-		}
-	}
+  @include active-states() {
+    &:before {
+      background-color: rgba($color-primary, 0.1);
+    }
+  }
 }
 
 button[disabled],
 .button--disabled {
-	background: $color-grey-lightest;
-	border: none;
-	cursor: not-allowed;
+  background: $color-grey-lightest;
+  border: none;
+  cursor: not-allowed;
 
-	@include active-states() {
-		&:before {
-			background-color: rgba($color-white, 0);
-			opacity: 0;
-		}
-	}
+  @include active-states() {
+    &:before {
+      background-color: rgba($color-white, 0);
+      opacity: 0;
+    }
+  }
 }
 
 button[type="reset"] {
-	background: $color-dark-blue;
-	background: linear-gradient(
-		to bottom,
-		lighten($color-dark-blue, 2.5%) 0%,
-		$color-dark-blue 100%
-	);
-	border: 1px $color-dark-blue;
-	opacity: 0.5;
+  background: $color-dark-blue;
+  background: linear-gradient(
+    to bottom,
+    lighten($color-dark-blue, 2.5%) 0%,
+    $color-dark-blue 100%
+  );
+  border: 1px $color-dark-blue;
+  opacity: 0.5;
 
-	@include active-states() {
-		opacity: 1;
+  @include active-states() {
+    opacity: 1;
 
-		&:before {
-			background-color: rgba($color-white, 0);
-			opacity: 0;
-		}
-	}
+    &:before {
+      background-color: rgba($color-white, 0);
+      opacity: 0;
+    }
+  }
 }

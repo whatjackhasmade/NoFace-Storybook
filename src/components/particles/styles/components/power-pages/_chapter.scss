@@ -1,15 +1,15 @@
 /* CHAPTER */
 
 .chapter {
-	&__image {
-		max-height: 175px;
+  &__image {
+    max-height: 175px;
 
-		transition: 0.2s transform ease;
-	}
+    transition: 0.2s transform ease;
+  }
 
-	@include active-states() {
-		.chapter__image {
-			transform: scale(1.05);
-		}
-	}
+  @include active-states() {
+    .chapter__image {
+      transform: scale(1.05);
+    }
+  }
 }

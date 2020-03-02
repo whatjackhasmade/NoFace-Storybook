@@ -2,74 +2,106 @@
   "footerNav": {
     "default": [
       {
+        "slug": "sitemap",
         "title": "Sitemap",
-        "items": [
-          {
-            "label": "Home",
-            "target": null,
-            "url": "#"
-          },
-          {
-            "label": "Shop",
-            "target": null,
-            "url": "#"
-          },
-          {
-            "label": "Contact",
-            "target": null,
-            "url": "#"
-          }
-        ]
+        "menuItems": {
+          "nodes": [
+            {
+              "label": "Home",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "Shop",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "Contact",
+              "target": null,
+              "url": "#"
+            }
+          ]
+        }
       },
       {
+        "slug": "information",
         "title": "Information",
-        "items": [
-          {
-            "label": "About us",
-            "target": null,
-            "url": "#"
-          },
-          {
-            "label": "FAQ",
-            "target": null,
-            "url": "#"
-          },
-          {
-            "label": "Insights",
-            "target": null,
-            "url": "#"
-          },
-          {
-            "label": "Privacy policy",
-            "target": null,
-            "url": "#"
-          }
-        ]
+        "menuItems": {
+          "nodes": [
+            {
+              "label": "About us",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "FAQ",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "Insights",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "Privacy policy",
+              "target": null,
+              "url": "#"
+            }
+          ]
+        }
       },
       {
+        "slug": "account",
         "title": "Your account",
-        "items": [
-          {
-            "label": "Register",
-            "target": null,
-            "url": "#"
-          },
-          {
-            "label": "Login",
-            "target": null,
-            "url": "#"
-          },
-          {
-            "label": "My orders",
-            "target": null,
-            "url": "#"
-          },
-          {
-            "label": "Shipping details",
-            "target": null,
-            "url": "#"
-          }
-        ]
+        "menuItems": {
+          "nodes": [
+            {
+              "label": "Register",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "Login",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "My orders",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "Shipping details",
+              "target": null,
+              "url": "#"
+            }
+          ]
+        }
+      },
+      {
+        "slug": "footer-social",
+        "title": "Social media",
+        "menuItems": {
+          "nodes": [
+            {
+              "label": "twitter",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "linkedin",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "email",
+              "target": null,
+              "url": "#"
+            }
+          ]
+        }
       }
     ],
     "group": "Content",

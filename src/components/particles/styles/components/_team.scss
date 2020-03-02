@@ -1,26 +1,26 @@
 /*///////////////
 /// TEAM
-*///////////////
+*/ //////////////
 
 .team {
-    color: $color-white;
-    text-shadow: 0 0 6px rgba($color-black, 0.6);
+  color: $color-white;
+  text-shadow: 0 0 6px rgba($color-black, 0.6);
 
-    h3, h4 {
-        margin: 0;
-    }
+  h3,
+  h4 {
+    margin: 0;
+  }
 }
 
-    .team__member {
-        position: relative;
-    }
+.team__member {
+  position: relative;
+}
 
-        .team__avatar {
+.team__avatar {
+}
 
-        }
-
-        .team__info {
-            position: absolute;
-            bottom: 0;
-            padding: $spacing-default;
-        }
+.team__info {
+  position: absolute;
+  bottom: 0;
+  padding: $spacing-default;
+}
