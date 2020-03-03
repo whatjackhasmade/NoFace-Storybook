@@ -40,7 +40,7 @@ const StyledFooter = styled.footer`
   }
 
   a + a {
-    margin-top: 6px;
+    margin-top: 10px;
   }
 
   a,
@@ -65,6 +65,9 @@ const StyledFooter = styled.footer`
   }
 
   nav {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
     flex: 1;
     margin-top: 32px;
 
@@ -99,6 +102,10 @@ const StyledFooter = styled.footer`
     min-width: 50px;
     position: relative;
     width: 50px;
+
+    a:after {
+      display: none;
+    }
 
     path {
       animation-duration: 1s;
@@ -150,7 +157,11 @@ const StyledFooter = styled.footer`
   }
 
   .footer__social {
-    display: flex;
+    flex-direction: row;
+
+    a:after {
+      display: none;
+    }
 
     a + a {
       margin-left: 16px;

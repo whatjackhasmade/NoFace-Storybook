@@ -2,7 +2,7 @@ import React from "react"
 import { array } from "@storybook/addon-knobs"
 import Footer from "./footer"
 
-import knobData from "./footer.knobs.json"
+import knobData from "knobs/footer.knobs.json"
 const { footerNav } = knobData
 
 export const standardFooter = () => (
