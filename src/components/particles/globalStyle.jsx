@@ -714,6 +714,10 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0 30px;
 		width: 100%;
 	}
+
+	.grid--wide {
+		max-width: 1800px;
+	}
 `
 
 export default GlobalStyle
