@@ -17,8 +17,6 @@ const Footer = ({ email, menus, telephone }) => {
   const socialMenu = menus.find(menu => menu.slug === `footer-social`)
   const standardMenus = menus.filter(menu => menu.slug !== `footer-social`)
 
-  console.log(standardMenus)
-
   return (
     <StyledFooter>
       <div className="grid">
@@ -29,14 +27,12 @@ const Footer = ({ email, menus, telephone }) => {
               <h5 className="hide">NoFace Website Development</h5>
             </Link>
           </div>
-          <div className="footer__social">
-            <FooterNav menu={socialMenu} isSocial={true} />
-          </div>
         </section>
         <section className="footer__menus">
-          {menus.map(menu => (
+          {standardMenus.map(menu => (
             <FooterNav menu={menu} isSocial={false} />
           ))}
+          {socialMenu && <FooterNav menu={socialMenu} isSocial={true} />}
         </section>
       </div>
     </StyledFooter>
@@ -57,7 +53,7 @@ const FooterNav = ({ menu, isSocial }) => {
       {title && <h2 className={isSocial ? `hide` : undefined}>{title}</h2>}
       {items.map(({ id, label, url }) => (
         <Link href={url} key={id}>
-          {!isSocial ? label : <Navicon name={label} />}
+          {!isSocial ? label : <NavIcon name={label} />}
         </Link>
       ))}
     </nav>
@@ -71,7 +67,7 @@ const Icons = {
   twitter: IconTwitter,
 }
 
-const Navicon = ({ name }) => {
+const NavIcon = ({ name }) => {
   name = name.toLowerCase()
   // If icon name value doesn't match Icons object keys then return null
   if (Icons[name] === undefined) return null

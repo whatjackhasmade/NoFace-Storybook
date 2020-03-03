@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"
 import "normalize.css/normalize.css"
 
 import device from "./mediaQueries"
-// import Fonts from "./fonts"
+import Fonts from "./fonts"
 import ThemeDefault from "./themeDefault"
 
 import ButtonReset from "atoms/button/button.reset"
@@ -63,6 +63,44 @@ const paddingUtilities = d => {
 }
 
 const GlobalStyle = createGlobalStyle`
+	@font-face {
+		font-family: 'Circular';
+		src: url(${Fonts.CircularRegularEOT}); /* IE9 Compat Modes */
+		src: url(${
+      Fonts.CircularRegularEOTIE
+    }) format('embedded-opentype'), /* IE6-IE8 */
+			url(${Fonts.CircularRegularWOFF2}) format('woff2'), /* Super Modern Browsers */
+			url(${Fonts.CircularRegularWOFF}) format('woff'), /* Pretty Modern Browsers */
+			url(${Fonts.CircularRegularTTF})  format('truetype'); /* Safari, Android, iOS */
+		font-style: normal;
+		font-weight: 400;
+	}
+
+		@font-face {
+		font-family: 'Circular';
+		src: url(${Fonts.CircularMediumEOT}); /* IE9 Compat Modes */
+		src: url(${
+      Fonts.CircularMediumEOTIE
+    }) format('embedded-opentype'), /* IE6-IE8 */
+			url(${Fonts.CircularMediumWOFF2}) format('woff2'), /* Super Modern Browsers */
+			url(${Fonts.CircularMediumWOFF}) format('woff'), /* Pretty Modern Browsers */
+			url(${Fonts.CircularMediumTTF})  format('truetype'); /* Safari, Android, iOS */
+		font-style: normal;
+		font-weight: 500;
+	}
+
+		@font-face {
+		font-family: 'Circular';
+		src: url(${Fonts.CircularBoldEOT}); /* IE9 Compat Modes */
+		src: url(${Fonts.CircularBoldEOTIE}) format('embedded-opentype'), /* IE6-IE8 */
+			url(${Fonts.CircularBoldWOFF2}) format('woff2'), /* Super Modern Browsers */
+			url(${Fonts.CircularBoldWOFF}) format('woff'), /* Pretty Modern Browsers */
+			url(${Fonts.CircularBoldTTF})  format('truetype'); /* Safari, Android, iOS */
+		font-style: normal;
+		font-weight: 700;
+	}
+
+
 	/* apply a natural box layout model to all elements, but allowing components to change */
 	*, *:before, *:after {
 		box-sizing: inherit;
@@ -81,30 +119,60 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	a {
+		position: relative;
+
 		color: inherit;
 		text-decoration: none;
 
+		&:after {
+			bottom: -6px;
+			content: "";
+			height: 2px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+
+			background: currentColor;
+			transform: scaleX(0);
+			transform-origin: right center;
+			transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+		}
+
+		&:focus {
+			outline: 1px dotted black;
+			outline-offset: 8px;
+		}
+
 		&:active,
 		&:focus,
-		&:hover {
-			text-decoration: underline;
+		&:hover,
+		&.active {
+			text-decoration: none;
+
+			&:after {
+				transform: scaleX(1);
+				transform-origin: left center;
+			}
 		}
 	}
 
 	article a {
-		&:active,
-		&:focus,
-		&:hover {
-			text-decoration: underline;
+		&:after {
+			transform: scaleX(1);
+			transform-origin: left center;
 		}
+	}
+
+	button {
+	  cursor: pointer;
 	}
 
 	body {
 		overflow-x: hidden;
 
 		color: ${props => props.theme.black};
-		font-family: "Gilroy", "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: 1.6rem;
+		font-family: "Circular", "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 1.8rem;
 		line-height: 1.5;
 		scroll-behavior: smooth;
 	}
@@ -316,11 +384,6 @@ const GlobalStyle = createGlobalStyle`
 			resize: vertical;
 		}
 	}
-
-	.DateInput input {
-		margin-top: 0;
-	}
-
 
 	img,
 	video {
@@ -585,23 +648,11 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	.react-images__blanket {
-		z-index: 1000 !important;
-	}
-
-	.react-images__positioner {
-		z-index: 1001 !important;
-	}
 
 	.wrapper {
 		flex: 1;
 		overflow: hidden;
 		width: 100%;
-	}
-
-	.wrapper--booking {
-		background-color: ${props =>
-      props.theme.grey300 ? props.theme.grey300 : `#DAE1E7`};
 	}
 
 	.wrapper--center {
@@ -625,16 +676,6 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	.foundation,
-	#__next {
-		display: flex;
-		min-height: 100vh;
-		flex-direction: column;
-	}
-
-	.background--dark-grey {
-		background-color: ${props => props.theme.grey700};
-	}
 
 	.hide,
 	.hidden {
@@ -671,6 +712,7 @@ const GlobalStyle = createGlobalStyle`
 		margin: 0 auto;
 		max-width: 1300px;
 		padding: 0 30px;
+		width: 100%;
 	}
 `
 

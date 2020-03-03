@@ -19,6 +19,7 @@ const StyledFooter = styled.footer`
 
     svg {
       fill: ${props => props.theme.grey300};
+      transition: 0.2s fill ease;
     }
 
     &:active,
@@ -61,8 +62,6 @@ const StyledFooter = styled.footer`
     margin: 0 0 8px;
 
     color: ${props => props.theme.white};
-    text-transform: uppercase;
-    letter-spacing: 1px;
   }
 
   nav {
@@ -126,7 +125,7 @@ const StyledFooter = styled.footer`
   }
 
   .footer__menus {
-    max-width: 800px;
+    max-width: 600px;
 
     @media ${device.xs} {
       display: flex;
@@ -151,15 +150,7 @@ const StyledFooter = styled.footer`
   }
 
   .footer__social {
-    align-items: center;
     display: flex;
-    margin-top: 0;
-    margin-left: auto;
-
-    @media ${device.md} {
-      margin-top: 12px;
-      margin-left: 0;
-    }
 
     a + a {
       margin-left: 16px;

@@ -2,28 +2,27 @@
   "headerNav": {
     "default": [
       {
-        "icon": null,
-        "label": "Shop",
-        "target": null,
-        "url": "#"
-      },
-      {
-        "icon": null,
-        "label": "About",
-        "target": null,
-        "url": "#"
-      },
-      {
-        "icon": null,
-        "label": "FAQ",
-        "target": null,
-        "url": "#"
-      },
-      {
-        "icon": null,
-        "label": "Contact",
-        "target": null,
-        "url": "#"
+        "slug": "sitemap",
+        "title": "Sitemap",
+        "menuItems": {
+          "nodes": [
+            {
+              "label": "Home",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "Shop",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "Contact",
+              "target": null,
+              "url": "#"
+            }
+          ]
+        }
       }
     ],
     "group": "Content",
