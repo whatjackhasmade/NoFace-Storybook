@@ -15,7 +15,11 @@ const StyledServices = styled.section`
   }
 
   @media ${device.xl} {
-    padding: 164px 0;
+    padding: 196px 0;
+  }
+
+  @media ${device.xxl} {
+    padding: 256px 0;
   }
 
   a {
@@ -104,6 +108,20 @@ const StyledServices = styled.section`
   .service--inview {
     opacity: 1;
     transform: translateY(0px);
+
+    @media ${device.md} {
+      &:nth-of-type(2) {
+        transition-delay: 0.4s;
+      }
+
+      &:nth-of-type(3) {
+        transition-delay: 0.8s;
+      }
+
+      &:nth-of-type(4) {
+        transition-delay: 1.2s;
+      }
+    }
   }
 
   .service__arrow {
@@ -143,9 +161,6 @@ const StyledServices = styled.section`
   .service__index {
     margin-top: 32px;
 
-    /* font-family: "Courier New", Courier, "Lucida Sans Typewriter",
-      "Lucida Typewriter", monospace; */
-
     &::before {
       content: "0";
     }
@@ -172,9 +187,16 @@ const StyledServices = styled.section`
       margin-top: 16px;
 
       font-weight: 400;
+      text-transform: lowercase;
 
       @media ${device.xl} {
         font-size: 66px;
+      }
+
+      > div {
+        > div:first-of-type {
+          text-transform: capitalize;
+        }
       }
     }
 
@@ -188,7 +210,6 @@ const StyledServices = styled.section`
   .services__items {
     display: flex;
     flex-direction: column;
-    margin-bottom: 96px;
     overflow: hidden;
 
     @media ${device.xs} {
@@ -198,10 +219,6 @@ const StyledServices = styled.section`
 
     @media ${device.md} {
       flex-wrap: nowrap;
-    }
-
-    @media ${device.xl} {
-      margin-bottom: 128px;
     }
 
     > * {
