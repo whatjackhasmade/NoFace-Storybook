@@ -30,7 +30,6 @@ export const ThemeDefault = {
   grey900: `#0d0d0d`,
   grey: `#8795A1`,
   black: `#141213`,
-  blackAbsolute: `#000`,
   /* COLOURS - BLUE */
   blue100: `#EAF3FB`,
   blue200: `#BFDAF2`,

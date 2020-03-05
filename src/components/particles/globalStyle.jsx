@@ -177,6 +177,14 @@ const GlobalStyle = createGlobalStyle`
 		scroll-behavior: smooth;
 	}
 
+	*[data-index="0"] {
+		padding-top: 114px;
+
+		@media ${device.md} {
+			padding-top: 0;
+		}
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		line-height: 1.25;
 		margin: 16px 0;
@@ -247,6 +255,14 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
+	.heading--title {
+		font-weight: 400;
+
+		@media ${device.xl} {
+			font-size: 66px;
+		}
+	}
+
 	.subheading {
 		color: ${props => props.theme.grey700};
 		font-size: 12px;
@@ -265,7 +281,7 @@ const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 		overflow-y: scroll;
 
-		font-family: "Gilroy", "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family: "Circular", "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: 62.5%;
 
 		/* BETTER FONT SMOOTHING - https://gist.github.com/hsleonis/55712b0eafc9b25f1944 */
@@ -286,10 +302,6 @@ const GlobalStyle = createGlobalStyle`
 		&.html--dashboard {
 			overflow-y: initial;
 		}
-	}
-
-	p {
-		font-weight: 500;
 	}
 
 	/* Form Styles */
@@ -710,13 +722,9 @@ const GlobalStyle = createGlobalStyle`
 
 	.grid {
 		margin: 0 auto;
-		max-width: 1300px;
+		max-width: 1800px;
 		padding: 0 30px;
 		width: 100%;
-	}
-
-	.grid--wide {
-		max-width: 1800px;
 	}
 `
 

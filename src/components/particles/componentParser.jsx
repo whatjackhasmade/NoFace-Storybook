@@ -3,8 +3,12 @@ import { isEmptyObject, generateID } from "helpers"
 
 import ParseHTML from "./parseHTML"
 
+import Hero from "organisms/hero/hero"
+import Services from "organisms/services/services"
+
 const components = {
-  // "acf/textbreak": TextBreak,
+  "acf/hero": Hero,
+  "acf/services": Services,
 }
 
 const convertACFProps = component => {
@@ -19,9 +23,8 @@ const convertACFProps = component => {
   return component
 }
 
-const ComponentParser = props => {
-  let { content } = props
-
+const ComponentParser = ({ content }) => {
+  console.log({ content })
   if (!content) return null
   const filteredComponents = content.filter(
     component =>

@@ -1,18 +1,70 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
+import { useInView } from "react-intersection-observer"
 
 import StyledHero from "./hero.styles"
 
+import ParseHTML from "particles/parseHTML"
+import AnimateLetters from "particles/text/animate-letters"
+
+import Heading from "atoms/heading/heading"
 import Link from "atoms/link/link"
 
-const Hero = ({ children, image, video }) => {
+const inViewConfig = {
+  threshold: 0.5,
+  triggerOnce: true,
+}
+
+const Hero = ({
+  backgroundColour,
+  children,
+  content,
+  image,
+  index,
+  title,
+  video,
+}) => (
+  <StyledHero
+    backgroundColour={backgroundColour}
+    className="hero"
+    data-index={index}
+  >
+    {(content || children || title) && (
+      <HeroContent
+        children={children}
+        content={content}
+        index={index}
+        title={title}
+      />
+    )}
+    {image && <HeroImage image={image} />}
+    {video && <HeroVideo video={video} />}
+  </StyledHero>
+)
+
+const HeroContent = ({ children, content, index, title }) => {
+  const [start, setStart] = useState(false)
+  const [ref, inView, entry] = useInView(inViewConfig)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setStart(true), 1000)
+    return () => clearTimeout(timer)
+  }, [inView])
+
+  const bodyClassName = !start ? `hero__body` : `hero__body hero__body--show`
+
   return (
-    <StyledHero className="hero">
-      <div className="hero__contents">
-        <div className="grid">{children}</div>
+    <div className="grid">
+      <div className="hero__contents" ref={ref}>
+        {title && (
+          <Heading level={1} title={true}>
+            <AnimateLetters inView={start}>{title}</AnimateLetters>
+          </Heading>
+        )}
+        <div className={bodyClassName}>
+          {children ? children : ParseHTML(content)}
+        </div>
       </div>
-      {image && <HeroImage image={image} />}
-      {video && <HeroVideo video={video} />}
-    </StyledHero>
+    </div>
   )
 }
 
@@ -29,6 +81,8 @@ const HeroImage = ({ image }) => {
     }
     return curr
   })
+  const hasSmartSizes = smartSizes.length > 0
+  if (!hasSmartSizes) return null
 
   return (
     <div className="hero__image">

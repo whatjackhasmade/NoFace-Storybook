@@ -1,3 +1,4 @@
+import "intersection-observer"
 import React from "react"
 import fetch from "isomorphic-unfetch"
 import { SWRConfig } from "swr"

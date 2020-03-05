@@ -1,0 +1,42 @@
+{
+  "title": {
+    "group": "Content",
+    "label": "Footer navigation",
+    "default": "Our core values"
+  },
+  "rows": {
+    "group": "Content",
+    "label": "Footer navigation",
+    "default": [
+      {
+        "body": "I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.",
+        "subtitle": "Delivering 100%",
+        "title": "We give it our all at NoFace"
+      },
+      {
+        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+      },
+      {
+        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+      },
+      {
+        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+      },
+      {
+        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+      },
+      {
+        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+      },
+      {
+        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+      },
+      {
+        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+      },
+      {
+        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+      }
+    ]
+  }
+}

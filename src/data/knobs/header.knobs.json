@@ -7,12 +7,17 @@
         "menuItems": {
           "nodes": [
             {
-              "label": "Home",
+              "label": "Case Studies",
               "target": null,
               "url": "#"
             },
             {
-              "label": "Shop",
+              "label": "Values",
+              "target": null,
+              "url": "#"
+            },
+            {
+              "label": "Writing",
               "target": null,
               "url": "#"
             },

@@ -8,6 +8,7 @@ export const hexToRGB = hex => {
     .substring(1)
     .match(/.{2}/g)
     .map(x => parseInt(x, 16))
+    .join(`,`)
 }
 
 export default hexToRGB

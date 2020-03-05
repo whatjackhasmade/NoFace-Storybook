@@ -15,13 +15,33 @@ const StyledHeader = styled.header`
   width: 100%;
   z-index: 101;
 
+  color: ${props => props.theme.white};
   font-weight: 400;
+
+  a {
+    @media ${device.xs} {
+      font-size: 2.5rem;
+    }
+  }
 
   a + a {
     margin-top: 16px;
+
     @media ${device.xs} {
       margin-left: 16px;
       margin-top: 0;
+    }
+
+    @media ${device.lg} {
+      margin-left: 24px;
+    }
+
+    @media ${device.xl} {
+      margin-left: 32px;
+    }
+
+    @media ${device.xxl} {
+      margin-left: 40px;
     }
   }
 
@@ -57,19 +77,31 @@ const StyledHeader = styled.header`
 
     path {
       animation-duration: 1s;
+      animation-fill-mode: forwards;
       animation-iteration-count: 1;
       animation-name: draw;
       animation-timing-function: linear;
       animation-timing-function: ease;
 
-      animation-fill-mode: forwards;
       fill: none;
-      stroke: black;
+      stroke: ${props => props.theme.white};
       stroke-dasharray: 142.47500610351562px;
       stroke-dashoffset: 142.47500610351562px;
       stroke-linecap: round;
       stroke-miterlimit: 10;
       stroke-width: 10;
+    }
+  }
+
+  .header__menu {
+    display: flex;
+
+    a:first-of-type {
+      margin-left: auto;
+    }
+
+    a:last-of-type {
+      margin-left: auto;
     }
   }
 
@@ -80,10 +112,16 @@ const StyledHeader = styled.header`
     top: initial;
 
     background-color: inherit;
-    color: black;
+    color: ${props => props.theme.black};
 
     @media ${device.xs} {
       display: block;
+
+      color: ${props => props.theme.white};
+    }
+
+    @media ${device.lg} {
+      flex: 1;
     }
 
     .header__logo {
@@ -116,6 +154,11 @@ const StyledHeader = styled.header`
     align-items: center;
     display: flex;
     margin-left: auto;
+
+    @media ${device.lg} {
+      flex: 1;
+      margin-left: initial;
+    }
   }
 
   &.header--open {

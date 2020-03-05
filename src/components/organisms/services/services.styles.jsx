@@ -187,16 +187,9 @@ const StyledServices = styled.section`
       margin-top: 16px;
 
       font-weight: 400;
-      text-transform: lowercase;
 
       @media ${device.xl} {
         font-size: 66px;
-      }
-
-      > div {
-        > div:first-of-type {
-          text-transform: capitalize;
-        }
       }
     }
 

@@ -1,6 +1,5 @@
 import React, { useRef } from "react"
 import { useInView } from "react-intersection-observer"
-import SplitText from "react-pose-text"
 
 import StyledServices from "./services.styles"
 
@@ -9,51 +8,26 @@ import IconSquare from "./assets/square.svg"
 import IconSquares from "./assets/squares.svg"
 import IconTarget from "./assets/target.svg"
 
-import Link from "atoms/link/link"
+import AnimateLetters from "particles/text/animate-letters"
 
-const charPoses = {
-  exit: { opacity: 0, y: 20 },
-  enter: {
-    opacity: 1,
-    y: 0,
-    delay: ({ charIndex }) => charIndex * 20,
-  },
-}
+import Link from "atoms/link/link"
 
 const inViewConfig = {
   threshold: 0.5,
   triggerOnce: true,
 }
 
-const Services = () => (
+const Services = ({ services }) => (
   <StyledServices className="services">
-    <div className="grid grid--wide">
+    <div className="grid">
       <ServicesIntro />
       <div className="services__items">
-        <SingleService href="/services/apps" index={1} type="app">
-          <h3>Design a new product</h3>
-          <p className="service__description">
-            Design and develop an industry leading product.
-          </p>
-        </SingleService>
-        <SingleService href="/services/products" index={2} type="product">
-          <h3>Improve an existing product</h3>
-          <p className="service__description">
-            Focus, prioritize, and turn your product into a category leader.
-          </p>
-        </SingleService>
-        <SingleService href="/services/company" index={3} type="company">
-          <h3>Launch a new company</h3>
-          <p className="service__description">
-            Take your vision from concept to launch.
-          </p>
-        </SingleService>
-        <SingleService href="/services/consulting" index={4} type="scale">
-          <h3>Product consulting</h3>
-          <p className="service__description">
-            Accelerate your strategic planning process.
-          </p>
-        </SingleService>
+        {services.map(({ description, href, title, type }, i) => (
+          <SingleService href={href} index={i + 1} type={type}>
+            <h3>{title}</h3>
+            <p className="service__description">{description}</p>
+          </SingleService>
+        ))}
       </div>
     </div>
   </StyledServices>
@@ -65,14 +39,10 @@ const ServicesIntro = () => {
   return (
     <div className="services__intro" ref={ref}>
       <h2>
-        <SplitText
-          initialPose="exit"
-          pose={inView ? `enter` : `exit`}
-          charPoses={charPoses}
-        >
+        <AnimateLetters inView={inView}>
           Our specialized teams lead the product design and development process
           for high growth companies.
-        </SplitText>
+        </AnimateLetters>
       </h2>
       <h3>What We Do</h3>
     </div>

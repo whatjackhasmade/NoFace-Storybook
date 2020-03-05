@@ -7,7 +7,7 @@ const StyledFooter = styled.footer`
   padding: 48px 0 100px;
 
   background-color: ${props => props.theme.grey900};
-  color: ${props => props.theme.grey300};
+  color: ${props => props.theme.white};
 
   @media ${device.md} {
     padding: 80px 0 160px;
@@ -18,23 +18,23 @@ const StyledFooter = styled.footer`
     transition: 0.2s all ease;
 
     svg {
-      fill: ${props => props.theme.grey300};
+      color: ${props => props.theme.white};
       transition: 0.2s fill ease;
     }
 
     &:active,
     &:focus,
     &:hover {
-      color: ${props => props.theme.white};
+      color: ${props => props.theme.primary};
       text-decoration: none;
 
       svg {
-        fill: ${props => props.theme.white};
+        fill: ${props => props.theme.primary};
       }
     }
 
     &:focus {
-      outline: 1px solid ${props => props.theme.white};
+      outline: 1px solid ${props => props.theme.primary};
       outline-offset: 5px;
     }
   }
@@ -50,7 +50,11 @@ const StyledFooter = styled.footer`
   h4,
   h5,
   h6 {
-    font-size: 16px;
+    font-size: 2rem;
+
+    @media ${device.xs} {
+      font-size: 2.5rem;
+    }
   }
 
   h1,
@@ -59,9 +63,9 @@ const StyledFooter = styled.footer`
   h4,
   h5,
   h6 {
-    margin: 0 0 8px;
+    margin: 0 0 16px;
 
-    color: ${props => props.theme.white};
+    font-weight: 300;
   }
 
   nav {
@@ -83,12 +87,8 @@ const StyledFooter = styled.footer`
   }
 
   .footer__company {
-    align-items: center;
-
-    @media ${device.md} {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .footer__copyright {
@@ -98,7 +98,43 @@ const StyledFooter = styled.footer`
     font-weight: 700;
   }
 
+  .footer__description {
+    margin-bottom: 24px;
+
+    * {
+      display: none;
+
+      @media ${device.md} {
+        margin-top: 24px;
+
+        display: inherit;
+      }
+    }
+
+    *:first-child {
+      display: inherit;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+
+      font-size: inherit;
+      font-weight: 400;
+
+      & + * {
+        margin-top: 8px;
+      }
+    }
+  }
+
   .footer__logo {
+    margin-bottom: 12px;
     min-width: 50px;
     position: relative;
     width: 50px;
@@ -132,7 +168,7 @@ const StyledFooter = styled.footer`
   }
 
   .footer__menus {
-    max-width: 600px;
+    max-width: 1100px;
 
     @media ${device.xs} {
       display: flex;
