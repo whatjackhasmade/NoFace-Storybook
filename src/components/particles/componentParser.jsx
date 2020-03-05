@@ -24,7 +24,6 @@ const convertACFProps = component => {
 }
 
 const ComponentParser = ({ content }) => {
-  console.log({ content })
   if (!content) return null
   const filteredComponents = content.filter(
     component =>
