@@ -725,6 +725,18 @@ const GlobalStyle = createGlobalStyle`
 		max-width: 1800px;
 		padding: 0 30px;
 		width: 100%;
+
+		@media ${device.sm} {
+			padding: 0 60px;
+		}
+
+		@media ${device.md} {
+			padding: 0 10%;
+		}
+
+		@media ${device.xl} {
+			padding: 0 100px;
+		}
 	}
 `
 

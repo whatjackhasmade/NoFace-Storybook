@@ -27,28 +27,11 @@ const Grid = ({ rows, title, type }) => {
         )}
         <div className="grid__contents">
           {rows.map(row => (
-            <RowWrapper {...row} />
+            <Row {...row} />
           ))}
         </div>
       </div>
     </StyledGrid>
-  )
-}
-
-const inViewWrapperConfig = {
-  threshold: 0.25,
-  triggerOnce: false,
-}
-
-const RowWrapper = props => {
-  const [ref, inView, entry] = useInView(inViewWrapperConfig)
-  let wrapperClass = `grid__row__wrapper`
-  if (inView) wrapperClass += ` grid__row__wrapper--active`
-
-  return (
-    <div className={wrapperClass} ref={ref}>
-      <Row {...props} />
-    </div>
   )
 }
 

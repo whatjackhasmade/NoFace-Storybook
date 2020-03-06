@@ -47,7 +47,12 @@ const StyledHeader = styled.header`
 
   button {
     ${buttonReset}
+
     cursor: pointer;
+
+    svg {
+      fill: ${props => props.theme.white};
+    }
   }
 
   h5 {
@@ -101,21 +106,37 @@ const StyledHeader = styled.header`
     }
 
     a:last-of-type {
-      margin-left: auto;
+      @media ${device.xs} {
+        margin-left: 16px;
+      }
+
+      @media ${device.lg} {
+        margin-left: auto;
+      }
     }
   }
 
   .header__menus {
-    display: none;
-    left: initial;
-    position: relative;
-    top: initial;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 100%;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
 
     background-color: inherit;
-    color: ${props => props.theme.black};
+    transition: 0.4s left ease;
 
     @media ${device.xs} {
       display: block;
+      height: auto;
+      left: initial;
+      position: relative;
+      top: initial;
+      width: auto;
 
       color: ${props => props.theme.white};
     }
@@ -163,18 +184,9 @@ const StyledHeader = styled.header`
 
   &.header--open {
     .header__menus {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: fixed;
-      top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
 
-      background-color: black;
-      color: white;
+      background-color: ${props => props.theme.black};
 
       @media ${device.xs} {
         left: initial;
@@ -182,7 +194,6 @@ const StyledHeader = styled.header`
         top: initial;
 
         background-color: inherit;
-        color: black;
       }
 
       a {
@@ -213,7 +224,7 @@ const StyledHeader = styled.header`
       }
 
       .header__toggle {
-        display: block;
+        display: flex;
 
         @media ${device.xs} {
           display: none;

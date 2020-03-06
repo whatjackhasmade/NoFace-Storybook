@@ -2,40 +2,46 @@
   "title": {
     "group": "Content",
     "label": "Footer navigation",
-    "default": "Our core values"
+    "default": "Our values"
   },
   "rows": {
     "group": "Content",
     "label": "Footer navigation",
     "default": [
       {
-        "body": "I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.",
-        "subtitle": "Delivering 100%",
-        "title": "We give it our all at NoFace"
+        "body": "<p>We want to be remembered for the quality of work we deliver our clients, the service we provide in consulting businesses, and in creating smart digital solutions that help businesses grow.</p>\n",
+        "subtitle": "Rich Legacy",
+        "title": "Create Greatness"
       },
       {
-        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+        "body": "<p>Bespoke. It&#8217;s our favourite term to use when defining what we provide. We have never, and will never use off-the-shelf solutions. We understand that every project has unique restraints or requirements and to deliver a perfect solution, it must be built from the ground up.</p>\n",
+        "subtitle": "Custom Solutions",
+        "title": "Bespoke"
       },
       {
-        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+        "body": "<p>We embrace the latest industry updates and look at how we can integrate cutting-edge technologies into our products — and ultimately attain better results in performance.</p>\n",
+        "subtitle": "Cutting-edge",
+        "title": "Pioneer and Optimise"
       },
       {
-        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+        "body": "<p>We believe that if you are going to do something, commit yourself to it 100%. We don&#8217;t believe in 110% because we aren&#8217;t bullshit marketers, we also don&#8217;t believe in giving it anything less because we know that as long as you give it your all, you couldn&#8217;t have done any more.</p>\n",
+        "subtitle": "Determined",
+        "title": "Giving Everything 100%"
       },
       {
-        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+        "body": "<p>At NoFace we believe that every problem has a solution, if not many solutions.</p>\n<p>We make it our mission on every project to assess a problem in great detail before devising the optimal solution that will resolve the problem based on the needs of a project.</p>\n",
+        "subtitle": "Research",
+        "title": "Solution Focused"
       },
       {
-        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+        "body": "<p>Many of our clients look to develop their business and products in phases. We know how to plan current implementations with scope for future iterations, allowing products to scale with minimal barriers and accelerated speeds.</p>\n",
+        "subtitle": "Horizon",
+        "title": "We Plan For The Future"
       },
       {
-        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
-      },
-      {
-        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
-      },
-      {
-        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>"
+        "body": "<p>A person is only as good as their word, when we agree to a project, we guarantee that as long as we are treated with the same respect that we afford our clients, a project will be complete.</p>\n",
+        "subtitle": "Complete",
+        "title": "Finish What You Started"
       }
     ]
   }

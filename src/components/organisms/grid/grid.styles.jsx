@@ -30,13 +30,18 @@ const StyledGrid = styled.section`
     padding: 32px 0 64px;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
     width: 100%;
 
     border-top: 1px solid rgba(156, 158, 165, 0.3);
     opacity: 0;
     transform: translateY(40px);
+
+    @media ${device.sm} {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 
   .grid__row--show {
@@ -46,16 +51,6 @@ const StyledGrid = styled.section`
     animation-name: fadeIn;
     animation-timing-function: linear;
     animation-timing-function: ease;
-  }
-
-  .grid__row__wrapper {
-    opacity: 0.2;
-    transition: 1s opacity ease;
-    transition-delay: 0.2s;
-  }
-
-  .grid__row__wrapper--active {
-    opacity: 1;
   }
 
   .grid__title {
@@ -77,8 +72,12 @@ const StyledGrid = styled.section`
       font-size: 4rem;
       font-weight: 300;
 
-      @media ${device.xxl} {
+      @media ${device.xl} {
         font-size: 6rem;
+      }
+
+      @media ${device.xxl} {
+        font-size: 8rem;
       }
     }
   }

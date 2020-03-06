@@ -71,7 +71,7 @@ const HeaderToggle = ({ menuOpen, toggleMenu }) => (
     }}
   >
     <IconBars />
-    {menuOpen ? `Close` : `Open`} Menu
+    <span>{menuOpen ? `Close` : `Open`} Menu</span>
   </button>
 )
 

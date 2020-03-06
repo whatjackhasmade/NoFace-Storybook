@@ -1,56 +1,30 @@
 import React from "react"
+import { select } from "@storybook/addon-knobs"
 import Page from "./page"
 
-import knobData from "./page.knobs.json"
+import aboutData from "./data/about.knobs.json"
+import indexData from "./data/index.knobs.json"
 
 import headerData from "knobs/header.knobs.json"
 const { headerNav } = headerData
 import footerData from "knobs/footer.knobs.json"
 const { footerNav } = footerData
 
-const query = `
-{
-  page(id: "cGFnZToy") {
-    id
-    blocks {
-      ... on AcfGridBlock {
-        acf {
-          rows {
-            basic
-            body
-            content
-            subtitle
-            title
-          }
-          title
-        }
-      }
-    }
-  }
+const label = `Page`
+const options = {
+  Index: { ...indexData },
+  About: { ...aboutData },
 }
-`
+const defaultValue = { ...indexData }
+const groupId = `Content`
 
-const url = "https://noface.local/wp/graphql/"
-
-export const standardPage = () => {
-  const body = JSON.stringify({ query })
-  fetch(url, {
-    body,
-    method: "POST",
-  })
-    .then(data => data.json())
-    .catch(error => {
-      console.error(error)
-    })
-
-  return (
-    <Page
-      footerMenus={footerNav.default}
-      headerMenus={headerNav.default}
-      pageContext={{ ...knobData }}
-    />
-  )
-}
+export const standardPage = () => (
+  <Page
+    footerMenus={footerNav.default}
+    headerMenus={headerNav.default}
+    pageContext={select(label, options, defaultValue, groupId)}
+  />
+)
 
 export default {
   component: Page,
