@@ -1,0 +1,12 @@
+{
+  "btnBackground": {
+    "default": "#00FFFF",
+    "group": "Styles",
+    "label": "Background colour"
+  },
+  "btnText": {
+    "default": "Primary action",
+    "group": "Content",
+    "label": "Button text"
+  }
+}
