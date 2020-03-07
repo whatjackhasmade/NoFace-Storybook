@@ -86,7 +86,7 @@ const StyledHero = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    max-width: 600px;
+    max-width: 740px;
     padding: 32px 0;
     position: relative;
     width: 100%;

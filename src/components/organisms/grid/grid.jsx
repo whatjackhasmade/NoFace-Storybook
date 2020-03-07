@@ -12,7 +12,7 @@ const inViewConfig = {
 }
 
 const Grid = ({ rows, title, type }) => {
-  const hasRows = rows.length > 0
+  const hasRows = rows && rows.length > 0
   if (!hasRows) return null
 
   const [ref, inView, entry] = useInView(inViewConfig)

@@ -96,19 +96,44 @@
       }
     },
     {
+      "name": "core/cover",
+      "originalContent": "<div class=\"wp-block-cover\" style=\"background-image:url(https://s3-eu-west-2.amazonaws.com/noface.co.uk/wp-content/uploads/2018/08/11090605/Wh%D1%83-%D0%86t%D1%95-%D0%86m%D1%80%D0%BErt%D0%B0nt-For-Bu%D1%95%D1%96n%D0%B5%D1%95%D1%95%D0%B5%D1%95-T%D0%BE-H%D0%B0v%D0%B5-A-W%D0%B5b%D1%95%D1%96t%D0%B5.jpg)\"><div class=\"wp-block-cover__inner-container\"></div></div>"
+    },
+    {
+      "name": "core/heading",
+      "originalContent": "<h2>Why we exist</h2>"
+    },
+    {
+      "name": "core/paragraph",
+      "originalContent": "<p>Eventually, every company needs consultation advice to design, build and scale their business.</p>"
+    },
+    {
+      "name": "core/paragraph",
+      "originalContent": "<p>We exist to provide a service to our clients by creating product strategies, designs, and developing innovative tech solutions based on their needs, and more importantly what their customers seek from them.</p>"
+    },
+    {
+      "name": "core/heading",
+      "originalContent": "<h2>Our Name</h2>"
+    },
+    {
+      "name": "core/paragraph",
+      "originalContent": "<p><strong>Our name NoFace invokes the idea that every business is a fresh canvas, waiting to be defined with personality, appearance, and character.</strong> We love working with all businesses, learning their story, their values, and more importantly what they want to achieve in this world.</p>"
+    },
+    {
       "name": "acf/grid",
-      "data": {
-        "title": "Our core values",
+      "originalContent": "",
+      "acf": {
+        "title": "Our values",
         "rows": [
-          {
-            "body": "<p>We want to be remembered for the quality of work we deliver our clients, the service we provide in consulting businesses, and in creating smart digital solutions that help businesses grow.</p>\n",
-            "subtitle": "Rich Legacy",
-            "title": "Create Greatness"
-          },
           {
             "body": "<p>Bespoke. It&#8217;s our favourite term to use when defining what we provide. We have never, and will never use off-the-shelf solutions. We understand that every project has unique restraints or requirements and to deliver a perfect solution, it must be built from the ground up.</p>\n",
             "subtitle": "Custom Solutions",
             "title": "Bespoke"
+          },
+          {
+            "body": "<p>We want to be remembered for the quality of work we deliver our clients, the service we provide in consulting businesses, and in creating smart digital solutions that help businesses grow.</p>\n",
+            "subtitle": "Rich Legacy",
+            "title": "Legacy"
           },
           {
             "body": "<p>We embrace the latest industry updates and look at how we can integrate cutting-edge technologies into our products — and ultimately attain better results in performance.</p>\n",

@@ -170,7 +170,8 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		overflow-x: hidden;
 
-		color: ${props => props.theme.black};
+		background-color: ${props => props.theme.grey900};
+		color: ${props => props.theme.white};
 		font-family: "Circular", "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: 1.8rem;
 		line-height: 1.5;

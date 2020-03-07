@@ -6,12 +6,21 @@ import ParseHTML from "./parseHTML"
 import Grid from "organisms/grid/grid"
 import Hero from "organisms/hero/hero"
 import Services from "organisms/services/services"
+import Wrapper from "organisms/wrapper/wrapper"
 
 const components = {
   "acf/grid": Grid,
   "acf/hero": Hero,
   "acf/services": Services,
 }
+
+const wrapperArray = [
+  "core/heading",
+  "core/image",
+  "core/list",
+  "core/paragraph",
+  "core/quote",
+]
 
 const convertACFProps = component => {
   // get all object keys and iterate over them
@@ -26,36 +35,67 @@ const convertACFProps = component => {
 }
 
 const ComponentParser = ({ content }) => {
-  if (!content) return null
-  const filteredComponents = content.filter(
-    component =>
-      !component || !isEmptyObject(component) || component.name !== null
+  let wrapperGroup = []
+
+  const hasNoContent = !content || content.length < 1
+  if (hasNoContent) return null
+
+  content = content.filter(
+    component => component && component.name && component.name !== null
   )
 
-  if (filteredComponents && filteredComponents.length > 0) {
-    const pageComponents = filteredComponents.map((component, index) => {
-      const Component = components[component.name]
+  const hasContent = content && content.length > 0
+  if (!hasContent) return null
 
-      if (!Component) return ParseHTML(component.originalContent)
+  const pageComponents = content.map((component, index) => {
+    if (isEmptyObject(component) || !component) return null
 
-      component = convertACFProps(component)
+    // Get the component name, trimming prefixes
+    const Component = components[component.name]
 
-      return (
-        <Component
-          index={index}
-          key={generateID(`component`)}
-          {...component}
-          {...component.data}
-          {...component.attributes}
-        />
-      )
-    })
+    // Unpack the ACF fields
+    component = convertACFProps(component)
 
-    if (pageComponents) {
-      return pageComponents
+    // If the component is an 'article' component, then add it to an article group
+    if (wrapperArray.includes(component.name)) {
+      wrapperGroup = [...wrapperGroup, component]
+
+      // If it's the last component, add all the components to an 'Article' wrapper component
+      if (index === content.length - 1) {
+        return (
+          <Wrapper
+            key={`component-${generateID()}`}
+            components={wrapperGroup}
+          />
+        )
+      }
     }
-  }
-  return null
+
+    // If the component isn't an 'article' component, add all the 'article' components to an 'Article' wrapper component and then output the current component afterwards
+    if (!wrapperArray.includes(component.name) && wrapperGroup.length) {
+      const wrapperComponents = [...wrapperGroup]
+      wrapperGroup = []
+      return (
+        <React.Fragment key={`component-${generateID()}`}>
+          <Wrapper components={wrapperComponents} />
+          <Component index={index} {...component.data} />
+        </React.Fragment>
+      )
+    }
+
+    if (!Component) return null
+
+    return (
+      <Component
+        index={index}
+        key={`component-${generateID()}`}
+        {...component}
+        {...component.data}
+        {...component.attributes}
+      />
+    )
+  })
+  if (pageComponents) return pageComponents
 }
 
 export default ComponentParser
