@@ -82,6 +82,10 @@ const StyledServices = styled.section`
       }
     }
 
+    &:nth-of-type(1n + 2) {
+      margin-top: 48px;
+    }
+
     &:nth-of-type(1n + 3) {
       @media ${device.xs} {
         margin-top: 48px;
@@ -93,21 +97,21 @@ const StyledServices = styled.section`
     }
 
     + .service {
-      margin-top: 64px;
-
-      @media ${device.xs} {
-        margin-top: inherit;
-      }
-
       @media ${device.lg} {
         margin-left: 64px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      @media ${device.xs} {
+        margin-top: 0;
       }
     }
   }
 
   .service--inview {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateX(0px);
 
     @media ${device.lg} {
       &:nth-of-type(2) {
@@ -148,7 +152,7 @@ const StyledServices = styled.section`
     display: flex;
 
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(-20px);
     transition: 0.2s opacity ease, 0.2s transform ease;
   }
 
@@ -253,8 +257,6 @@ const StyledServices = styled.section`
     }
 
     svg {
-      stroke: #50e3c2;
-
       circle,
       rect {
         stroke-opacity: 0.4;
@@ -265,23 +267,11 @@ const StyledServices = styled.section`
       }
     }
   }
+`
 
-  .service--product {
-    svg {
-      stroke: #f8c91c;
-    }
-  }
-
-  .service--company {
-    svg {
-      stroke: #bd10e0;
-    }
-  }
-
-  .service--scale {
-    svg {
-      stroke: #ff4081;
-    }
+export const StyledService = styled.article`
+  svg {
+    stroke: ${props => props.colour};
   }
 `
 

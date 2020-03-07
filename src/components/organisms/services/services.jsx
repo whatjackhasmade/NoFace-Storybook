@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { useInView } from "react-intersection-observer"
 
-import StyledServices from "./services.styles"
+import StyledServices, { StyledService } from "./services.styles"
 
 import IconCircles from "./assets/circles.svg"
 import IconSquare from "./assets/square.svg"
@@ -22,8 +22,8 @@ const Services = ({ services }) => (
     <div className="grid">
       <ServicesIntro />
       <div className="services__items">
-        {services.map(({ description, href, title, type }, i) => (
-          <SingleService href={href} index={i + 1} type={type}>
+        {services.map(({ colour, description, href, title, type }, i) => (
+          <SingleService colour={colour} href={href} index={i + 1} type={type}>
             <h3>{title}</h3>
             <p className="service__description">{description}</p>
           </SingleService>
@@ -49,14 +49,20 @@ const ServicesIntro = () => {
   )
 }
 
-const SingleService = ({ children, href, index = 1, type }) => {
+const SingleService = ({
+  children,
+  colour = `#50e3c2`,
+  href,
+  index = 1,
+  type,
+}) => {
   const [ref, inView, entry] = useInView(inViewConfig)
 
   let className = `service service--${type}`
   if (inView) className += ` service--inview`
 
   return (
-    <div className={className} ref={ref}>
+    <StyledService className={className} colour={colour} ref={ref}>
       <Link aria-label="Learn more" href={href}>
         {type === `app` && <IconSquare />}
         {type === `product` && <IconCircles />}
@@ -66,7 +72,7 @@ const SingleService = ({ children, href, index = 1, type }) => {
         {children}
         <LearnMore />
       </Link>
-    </div>
+    </StyledService>
   )
 }
 
