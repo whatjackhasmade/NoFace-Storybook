@@ -251,32 +251,104 @@ const StyledServices = styled.section`
   }
 
   .service--design {
-    svg {
+    circle {
+      stroke-opacity: 0.8;
+
+      animation-name: initial;
+      animation-duration: 4s;
+      animation-timing-function: ease;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+      animation-play-state: running;
+    }
+
+    circle:nth-of-type(2) {
+      animation-name: designOvalAnimation;
+    }
+
+    circle:nth-of-type(3) {
+      animation-name: designCircleOutAnimation;
+    }
+
+    circle:nth-of-type(4) {
+      animation-name: designCircleInAnimation;
+    }
+
+    @media ${device.lg} {
       circle ~ circle {
         stroke-opacity: 0;
       }
+
+      circle:nth-of-type(2),
+      circle:nth-of-type(3),
+      circle:nth-of-type(4) {
+        animation-name: initial;
+      }
     }
 
-    &:active,
-    &:focus,
-    &:hover {
-      svg {
-        circle {
-          stroke-opacity: 0.8;
-        }
-
-        circle:nth-of-type(2) {
-          transform: scaleY(0.55) scaleX(1);
-        }
-
-        circle:nth-of-type(3) {
-          transform: scale(0.5);
-        }
-
-        circle:nth-of-type(4) {
-          transform: scale(0.4);
-        }
+    &.service--animating {
+      circle ~ circle {
+        stroke-opacity: 0.8;
       }
+
+      circle:nth-of-type(2) {
+        animation-name: designOvalAnimation;
+      }
+
+      circle:nth-of-type(3) {
+        animation-name: designCircleOutAnimation;
+      }
+
+      circle:nth-of-type(4) {
+        animation-name: designCircleInAnimation;
+      }
+    }
+  }
+
+  @keyframes designOvalAnimation {
+    0% {
+      transform: scaleX(1) scaleY(1);
+    }
+    25% {
+      transform: scaleX(1) scaleY(0.55);
+    }
+    75% {
+      transform: scaleX(1) scaleY(0.55);
+    }
+    100% {
+      transform: scaleX(1) scaleY(1);
+    }
+  }
+
+  @keyframes designCircleOutAnimation {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(0.5);
+    }
+    75% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes designCircleInAnimation {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(0.4);
+    }
+    75% {
+      transform: scale(0.4);
+    }
+    100% {
+      transform: scale(1);
     }
   }
 
