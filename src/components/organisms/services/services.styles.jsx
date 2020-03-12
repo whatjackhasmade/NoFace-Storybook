@@ -301,23 +301,31 @@ const StyledServices = styled.section`
   }
 
   .service--improve {
+    g {
+      animation-name: searchAnimation;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+      animation-play-state: running;
+    }
+
+    @media ${device.lg} {
+      g {
+        animation-name: initial;
+      }
+    }
+
     &.service--animating {
-      svg {
-        circle,
-        rect {
-          stroke-opacity: 0.8;
-        }
+      circle,
+      rect {
+        stroke-opacity: 0.8;
       }
 
-      svg g {
+      g {
         animation-name: searchAnimation;
-        animation-duration: 2s;
-        animation-timing-function: ease;
-        animation-delay: 0s;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
       }
     }
   }
@@ -353,6 +361,50 @@ const StyledServices = styled.section`
       opacity: 0;
     }
 
+    rect,
+    text {
+      animation-name: checklistBoxAnimation;
+      animation-duration: 3s;
+      animation-delay: 0s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+      animation-play-state: running;
+    }
+
+    rect:nth-of-type(1) {
+      animation-name: checklistBoxAnimationFirst;
+    }
+
+    rect:nth-of-type(2) {
+      animation-delay: 0.2s;
+    }
+
+    rect:nth-of-type(3) {
+      animation-delay: 0.4s;
+    }
+
+    text {
+      animation-delay: 0.2s;
+    }
+
+    text:nth-of-type(2) {
+      animation-delay: 0.4s;
+    }
+
+    text:nth-of-type(3) {
+      animation-delay: 0.6s;
+    }
+
+    @media ${device.lg} {
+      rect:nth-of-type(1),
+      rect,
+      text {
+        animation-name: initial;
+      }
+    }
+
     &.service--animating {
       rect {
         stroke-opacity: 0.8;
@@ -361,37 +413,11 @@ const StyledServices = styled.section`
       rect,
       text {
         animation-name: checklistBoxAnimation;
-        animation-duration: 3s;
-        animation-delay: 0s;
-        animation-timing-function: ease;
         animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
       }
 
       rect:nth-of-type(1) {
         animation-name: checklistBoxAnimationFirst;
-      }
-
-      rect:nth-of-type(2) {
-        animation-delay: 0.2s;
-      }
-
-      rect:nth-of-type(3) {
-        animation-delay: 0.4s;
-      }
-
-      text {
-        animation-delay: 0.2s;
-      }
-
-      text:nth-of-type(2) {
-        animation-delay: 0.4s;
-      }
-
-      text:nth-of-type(3) {
-        animation-delay: 0.6s;
       }
     }
   }
@@ -412,7 +438,11 @@ const StyledServices = styled.section`
 
   @keyframes checklistBoxAnimationFirst {
     0% {
-      opacity: 1;
+      opacity: 0;
+
+      @media ${device.lg} {
+        opacity: 1;
+      }
     }
 
     25% {
