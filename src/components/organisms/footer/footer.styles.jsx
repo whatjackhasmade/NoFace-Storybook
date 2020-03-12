@@ -85,6 +85,18 @@ const StyledFooter = styled.footer`
   .footer__company {
     align-items: flex-start;
     flex-direction: column;
+
+    @media ${device.md} {
+      padding-right: 48px;
+    }
+
+    @media ${device.lg} {
+      padding-right: 64px;
+    }
+
+    @media ${device.xl} {
+      padding-right: 96px;
+    }
   }
 
   .footer__copyright {

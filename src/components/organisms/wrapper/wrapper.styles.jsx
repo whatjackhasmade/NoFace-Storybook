@@ -2,18 +2,18 @@ import styled from "styled-components"
 import device from "particles/mediaQueries"
 
 const StyledWrapper = styled.article`
-  padding: 96px 0;
+  margin: 96px 0;
 
   @media ${device.md} {
-    padding: 128px 0;
+    margin: 128px 0;
   }
 
   @media ${device.xl} {
-    padding: 156px 0;
+    margin: 156px 0;
   }
 
   @media ${device.xxl} {
-    padding: 196px 0;
+    margin: 196px 0;
   }
 
   .component-wrapper__contents {

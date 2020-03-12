@@ -1,24 +1,23 @@
 import styled from "styled-components"
 import device from "particles/mediaQueries"
+import { hexToRGB } from "helpers"
 
 const StyledGrid = styled.section`
   min-height: 100vh;
-  padding: 96px 0;
+  margin: 96px 0;
 
-  background-color: ${props => props.theme.grey800};
-  color: ${props => props.theme.white};
   counter-reset: term;
 
   @media ${device.md} {
-    padding: 128px 0;
+    margin: 128px 0;
   }
 
   @media ${device.xl} {
-    padding: 196px 0;
+    margin: 196px 0;
   }
 
   @media ${device.xxl} {
-    padding: 256px 0;
+    margin: 256px 0;
   }
 
   .grid__contents {
@@ -33,7 +32,7 @@ const StyledGrid = styled.section`
     flex-direction: column;
     width: 100%;
 
-    border-top: 1px solid rgba(156, 158, 165, 0.3);
+    border-top: 1px solid ${props => props.theme.grey700};
     opacity: 0;
     transform: translateY(40px);
 

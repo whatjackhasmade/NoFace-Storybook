@@ -24,6 +24,7 @@ const textShadow = props => {
 }
 
 const StyledSignPosts = styled.nav`
+  margin-top: -32px;
   padding: 32px 0;
   position: relative;
   width: 100%;
@@ -32,6 +33,18 @@ const StyledSignPosts = styled.nav`
   color: ${props => props.theme.white};
   fill: transparent;
   text-shadow: ${props => textShadow(props)};
+
+  @media ${device.md} {
+    margin-top: -64px;
+  }
+
+  @media ${device.xl} {
+    margin-top: -98px;
+  }
+
+  @media ${device.xxl} {
+    margin-top: -128px;
+  }
 
   @media ${device.md} {
     padding: 48px 0;

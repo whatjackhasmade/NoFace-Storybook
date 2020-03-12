@@ -2,7 +2,7 @@ import styled from "styled-components"
 import device from "particles/mediaQueries"
 
 const StyledServices = styled.section`
-  padding: 96px 0;
+  margin: 96px 0;
   position: relative;
   width: 100%;
 
@@ -10,15 +10,15 @@ const StyledServices = styled.section`
   fill: transparent;
 
   @media ${device.md} {
-    padding: 128px 0;
+    margin: 128px 0;
   }
 
   @media ${device.xl} {
-    padding: 196px 0;
+    margin: 196px 0;
   }
 
   @media ${device.xxl} {
-    padding: 256px 0;
+    margin: 256px 0;
   }
 
   a {

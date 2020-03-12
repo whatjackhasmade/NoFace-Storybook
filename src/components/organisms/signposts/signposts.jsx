@@ -1,10 +1,16 @@
-import React from "react"
+import React, { useRef } from "react"
+import { useInView } from "react-intersection-observer"
 
 import StyledSignPosts from "./signposts.styles"
 
 import CTA from "atoms/cta/cta"
 import Link from "atoms/link/link"
 import Video from "atoms/video/video"
+
+const inViewConfig = {
+  threshold: 0,
+  triggerOnce: true,
+}
 
 const SignPosts = ({ items }) => {
   const hasItems = items && items.length > 0
@@ -24,9 +30,11 @@ const SignPosts = ({ items }) => {
 }
 
 const SignPost = ({ description, image, link, title, video }) => {
+  const [ref, inView, entry] = useInView(inViewConfig)
   const hasMedia = image || video
+
   return (
-    <div className="signpost">
+    <div className="signpost" ref={ref}>
       <div className="signpost__content">
         {title && <h3 className="signpost__title">{title}</h3>}
         {description && <p className="signpost__description">{description}</p>}
@@ -39,7 +47,9 @@ const SignPost = ({ description, image, link, title, video }) => {
       {hasMedia && (
         <div className="signpost__media">
           {image && <img src={image} />}
-          {video && <Video className="signpost__video" video={video} />}
+          {inView && video && (
+            <Video className="signpost__video" video={video} />
+          )}
         </div>
       )}
       {link && (
