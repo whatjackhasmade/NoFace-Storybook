@@ -6,20 +6,22 @@ import ParseHTML from "./parseHTML"
 import Grid from "organisms/grid/grid"
 import Hero from "organisms/hero/hero"
 import Services from "organisms/services/services"
+import Signposts from "organisms/signposts/signposts"
 import Wrapper from "organisms/wrapper/wrapper"
 
 const components = {
   "acf/grid": Grid,
   "acf/hero": Hero,
   "acf/services": Services,
+  "acf/signposts": Signposts,
 }
 
 const wrapperArray = [
-  "core/heading",
-  "core/image",
-  "core/list",
-  "core/paragraph",
-  "core/quote",
+  `core/heading`,
+  `core/image`,
+  `core/list`,
+  `core/paragraph`,
+  `core/quote`,
 ]
 
 const convertACFProps = component => {

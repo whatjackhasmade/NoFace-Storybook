@@ -108,14 +108,14 @@ const GlobalStyle = createGlobalStyle`
 
 	::-webkit-scrollbar
 	{
-		width: 10px;
-		background-color: #f2f4f8;
+		width: 15px;
+		background-color: ${props => props.theme.grey800};
 	}
 
 	::-webkit-scrollbar-thumb
 	{
-		background-color: #2B3D55;
-		border: 2px solid #2B3D55;
+		background-color: ${props => props.theme.grey600};
+		border: 2px solid ${props => props.theme.grey600};
 	}
 
 	a {
@@ -170,7 +170,7 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		overflow-x: hidden;
 
-		background-color: ${props => props.theme.grey900};
+  	background-color: ${props => props.theme.black};
 		color: ${props => props.theme.white};
 		font-family: "Circular", "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: 1.8rem;

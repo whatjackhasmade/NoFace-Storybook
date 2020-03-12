@@ -7,6 +7,7 @@ import ParseHTML from "particles/parseHTML"
 
 import Heading from "atoms/heading/heading"
 import Link from "atoms/link/link"
+import Video from "atoms/video/video"
 
 const inViewConfig = {
   threshold: 0.5,
@@ -36,7 +37,7 @@ const Hero = ({
       />
     )}
     {image && <HeroImage image={image} />}
-    {video && <HeroVideo video={video} />}
+    {video && <Video className="hero__video" video={video} />}
   </StyledHero>
 )
 
@@ -100,12 +101,5 @@ const HeroImage = ({ image }) => {
     </div>
   )
 }
-
-const HeroVideo = ({ video }) => (
-  <video className="hero__video" autoPlay loop muted>
-    <source src={video} type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-)
 
 export default Hero

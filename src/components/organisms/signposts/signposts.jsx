@@ -4,6 +4,7 @@ import StyledSignPosts from "./signposts.styles"
 
 import CTA from "atoms/cta/cta"
 import Link from "atoms/link/link"
+import Video from "atoms/video/video"
 
 const SignPosts = ({ items }) => {
   const hasItems = items && items.length > 0
@@ -36,7 +37,10 @@ const SignPost = ({ description, image, link, title, video }) => {
         )}
       </div>
       {hasMedia && (
-        <div className="signpost__media">{image && <img src={image} />}</div>
+        <div className="signpost__media">
+          {image && <img src={image} />}
+          {video && <Video className="signpost__video" video={video} />}
+        </div>
       )}
       {link && (
         <Link className="signpost__link" href={link.url} target={link.target}>

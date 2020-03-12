@@ -132,6 +132,31 @@
         "subtitle": "What We Do",
         "title": "Our mindful creatives lead digital design and development processes for companies looking to advance."
       }
+    },
+    {
+      "name": "acf/signposts",
+      "data": {
+        "items": [
+          {
+            "description": "Focus, prioritize, and turn your product into a category leader.",
+            "image": "http://unsplash.it/2560/1440?random&gravity=center",
+            "link": {
+              "title": "Design a new product",
+              "url": "#"
+            },
+            "title": "Design a new product"
+          },
+          {
+            "image": "http://unsplash.it/2560/1440?random&gravity=center",
+            "link": {
+              "title": "Design a new product",
+              "url": "#"
+            },
+            "title": "Design a new product",
+            "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+          }
+        ]
+      }
     }
   ]
 }

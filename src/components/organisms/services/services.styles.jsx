@@ -6,7 +6,6 @@ const StyledServices = styled.section`
   position: relative;
   width: 100%;
 
-  background-color: ${props => props.theme.black};
   color: ${props => props.theme.white};
   fill: transparent;
 

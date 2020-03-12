@@ -51,10 +51,6 @@ const StyledFooter = styled.footer`
   h5,
   h6 {
     font-size: 2rem;
-
-    @media ${device.xs} {
-      font-size: 2.5rem;
-    }
   }
 
   h1,

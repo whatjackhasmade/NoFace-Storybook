@@ -1,20 +1,24 @@
 {
-  "items": [
-    {
-      "description": "Focus, prioritize, and turn your product into a category leader.",
-      "image": "http://unsplash.it/2560/1440?random&gravity=center",
-      "link": {
-        "title": "Design a new product",
-        "url": "#"
+  "items": {
+    "default": [
+      {
+        "description": "Focus, prioritize, and turn your product into a category leader.",
+        "image": "http://unsplash.it/2560/1440?random&gravity=center",
+        "link": {
+          "title": "Design a new product",
+          "url": "#"
+        },
+        "title": "Design a new product"
       },
-      "title": "Design a new product"
-    },
-    {
-      "link": {
-        "title": "Design a new product",
-        "url": "#"
-      },
-      "title": "Design a new product"
-    }
-  ]
+      {
+        "link": {
+          "title": "Design a new product",
+          "url": "#"
+        },
+        "title": "Design a new product"
+      }
+    ],
+    "group": "Content",
+    "label": "Items"
+  }
 }

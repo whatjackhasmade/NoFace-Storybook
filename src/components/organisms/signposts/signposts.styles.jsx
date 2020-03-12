@@ -2,6 +2,17 @@ import styled from "styled-components"
 import device from "particles/mediaQueries"
 import { hexToRGB } from "helpers"
 
+const overlayFade = props => {
+  const rgbBlack = hexToRGB(props.theme.black)
+
+  const fade = `linear-gradient(
+      to top,
+      rgba(${rgbBlack}, 0) 80%,
+      rgba(${rgbBlack}, 1) 100%
+    );`
+  return fade
+}
+
 const textShadow = props => {
   const rgbBlack = hexToRGB(props.theme.black)
 
@@ -17,7 +28,7 @@ const StyledSignPosts = styled.nav`
   position: relative;
   width: 100%;
 
-  background-color: ${props => props.theme.grey800};
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   color: ${props => props.theme.white};
   fill: transparent;
   text-shadow: ${props => textShadow(props)};
@@ -32,6 +43,19 @@ const StyledSignPosts = styled.nav`
 
   @media ${device.xxl} {
     padding: 96px 0;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    background: ${props => overlayFade(props)};
   }
 
   a {
@@ -70,6 +94,8 @@ const StyledSignPosts = styled.nav`
   .signposts__contents {
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
 
     @media ${device.md} {
       flex-direction: row;
@@ -98,9 +124,24 @@ const StyledSignPosts = styled.nav`
     &:focus,
     &:focus-within,
     &:hover {
-      .signpost__link {
+      &::before {
         opacity: 0.5;
       }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+
+      background-color: ${props => props.theme.black};
+      opacity: 0.8;
+      transition: 1s opacity ease;
     }
   }
 
@@ -115,16 +156,13 @@ const StyledSignPosts = styled.nav`
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 2;
-
-    background-color: ${props => props.theme.black};
-    opacity: 0.8;
-    transition: 1s opacity ease;
+    z-index: 4;
   }
 
   .signpost__media {
     height: 100%;
     left: 0;
+    overflow: hidden;
     position: absolute;
     top: 0;
     width: 100%;
