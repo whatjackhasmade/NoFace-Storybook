@@ -99,12 +99,8 @@ const StyledHero = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-<<<<<<< Updated upstream
     max-width: 740px;
-=======
-    max-width: 600px;
     min-height: 60vh;
->>>>>>> Stashed changes
     padding: 32px 0;
     position: relative;
     width: 100%;
