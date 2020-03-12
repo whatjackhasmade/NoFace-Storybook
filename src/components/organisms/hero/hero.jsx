@@ -4,7 +4,6 @@ import { useInView } from "react-intersection-observer"
 import StyledHero from "./hero.styles"
 
 import ParseHTML from "particles/parseHTML"
-import AnimateLetters from "particles/text/animate-letters"
 
 import Heading from "atoms/heading/heading"
 import Link from "atoms/link/link"
@@ -55,12 +54,12 @@ const HeroContent = ({ children, content, index, title }) => {
   return (
     <div className="grid">
       <div className="hero__contents" ref={ref}>
-        {title && (
-          <Heading level={1} title={true}>
-            <AnimateLetters inView={start}>{title}</AnimateLetters>
-          </Heading>
-        )}
         <div className={bodyClassName}>
+          {title && (
+            <Heading level={1} title={true}>
+              {title}
+            </Heading>
+          )}
           {children ? children : ParseHTML(content)}
         </div>
       </div>

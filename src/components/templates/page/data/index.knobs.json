@@ -3,8 +3,9 @@
     {
       "name": "acf/hero",
       "data": {
-        "content": "<p>I think there's an artist hidden in the bottom of every single one of us. A tree cannot be straight if it has a crooked trunk.</p><p>With something so strong, a little bit can go a long way. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things.</p>",
-        "title": "This is NoFace",
+        "content": "<p>Our mindful creatives lead digital design and development processes for companies looking to advance.</p>",
+        "title": "NoFace, Website design and development",
+        "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
         "image": {
           "altText": "",
           "sourceUrl": "http://unsplash.it/2560/1440?random&gravity=center",
@@ -123,7 +124,9 @@
             "title": "Product consulting",
             "type": "scale"
           }
-        ]
+        ],
+        "subtitle": "What we do",
+        "title": "Our mindful creatives lead digital design and development processes for companies looking to advance."
       }
     }
   ]

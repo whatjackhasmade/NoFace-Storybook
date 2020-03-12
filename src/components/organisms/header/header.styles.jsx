@@ -1,7 +1,18 @@
 import styled from "styled-components"
 import device from "particles/mediaQueries"
+import { hexToRGB } from "helpers"
 
 import buttonReset from "atoms/button/button.reset"
+
+const textShadow = props => {
+  const rgbBlack = hexToRGB(props.theme.black)
+
+  let shadow = `0px 4px 3px rgba(${rgbBlack}, 0.4),`
+  shadow += `0px 6px 13px rgba(${rgbBlack}, 0.1),`
+  shadow += `0px 12px 23px rgba(${rgbBlack}, 0.1)`
+
+  return shadow
+}
 
 const StyledHeader = styled.header`
   align-items: center;
@@ -17,6 +28,30 @@ const StyledHeader = styled.header`
 
   color: ${props => props.theme.white};
   font-weight: 400;
+  text-shadow: ${props => textShadow(props)};
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
 
   a {
     @media ${device.xs} {

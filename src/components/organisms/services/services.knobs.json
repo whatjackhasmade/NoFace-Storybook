@@ -28,5 +28,15 @@
     ],
     "group": "Content",
     "label": "Service Items"
+  },
+  "subtitle": {
+    "default": "What we do",
+    "group": "Content",
+    "label": "Titles"
+  },
+  "title": {
+    "default": "Our mindful creatives lead digital design and development processes for companies looking to advance.",
+    "group": "Content",
+    "label": "Titles"
   }
 }

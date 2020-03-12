@@ -6,7 +6,7 @@ const backgroundColour = props => {
   let hexColour = ``
   const hasProp = props.backgroundColour
   if (hasProp) hexColour = props.backgroundColour
-  if (!hasProp) hexColour = props.theme.primary
+  if (!hasProp) hexColour = props.theme.black
 
   return hexColour
 }
@@ -45,6 +45,19 @@ const StyledHero = styled.section`
       rgba(0, 0, 0, 0.65) 100%
     );
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 4rem;
+
+    @media ${device.md} {
+      font-size: 48px;
+    }
   }
 
   p {
@@ -86,7 +99,12 @@ const StyledHero = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+<<<<<<< Updated upstream
     max-width: 740px;
+=======
+    max-width: 600px;
+    min-height: 60vh;
+>>>>>>> Stashed changes
     padding: 32px 0;
     position: relative;
     width: 100%;

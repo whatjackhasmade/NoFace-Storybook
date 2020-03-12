@@ -17,10 +17,10 @@ const inViewConfig = {
   triggerOnce: true,
 }
 
-const Services = ({ services }) => (
+const Services = ({ services, subtitle, title }) => (
   <StyledServices className="services">
     <div className="grid">
-      <ServicesIntro />
+      <ServicesIntro subtitle={subtitle} title={title} />
       <div className="services__items">
         {services.map(({ colour, description, href, title, type }, i) => (
           <SingleService colour={colour} href={href} index={i + 1} type={type}>
@@ -33,18 +33,15 @@ const Services = ({ services }) => (
   </StyledServices>
 )
 
-const ServicesIntro = () => {
+const ServicesIntro = ({ subtitle, title }) => {
   const [ref, inView, entry] = useInView(inViewConfig)
 
   return (
     <div className="services__intro" ref={ref}>
       <h2>
-        <AnimateLetters inView={inView}>
-          Our specialized teams lead the product design and development process
-          for high growth companies.
-        </AnimateLetters>
+        <AnimateLetters inView={inView}>{title}</AnimateLetters>
       </h2>
-      <h3>What We Do</h3>
+      <h3>{subtitle}</h3>
     </div>
   )
 }
