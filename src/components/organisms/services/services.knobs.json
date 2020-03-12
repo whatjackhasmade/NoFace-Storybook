@@ -2,28 +2,32 @@
   "services": {
     "default": [
       {
+        "colour": "#60aefc",
         "description": "Design and develop an industry leading product.",
         "href": "/services/apps",
         "title": "Design a new product",
-        "type": "app"
+        "type": "design"
       },
       {
+        "colour": "#1CF598",
         "description": "Focus, prioritize, and turn your product into a category leader.",
         "href": "/services/products",
         "title": "Improve an existing product",
-        "type": "product"
+        "type": "improve"
       },
       {
+        "colour": "#F14E9F",
         "description": "Take your vision from concept to launch.",
         "href": "/services/company",
         "title": "Launch a new company",
-        "type": "company"
+        "type": "launch"
       },
       {
+        "colour": "#2CF1EE",
         "description": "Accelerate your strategic planning process.",
         "href": "/services/consulting",
         "title": "Product consulting",
-        "type": "scale"
+        "type": "consult"
       }
     ],
     "group": "Content",
@@ -31,12 +35,12 @@
   },
   "subtitle": {
     "default": "What we do",
-    "group": "Content",
-    "label": "Titles"
+    "group": "Titles",
+    "label": "Subtitle"
   },
   "title": {
     "default": "Our mindful creatives lead digital design and development processes for companies looking to advance.",
-    "group": "Content",
-    "label": "Titles"
+    "group": "Titles",
+    "label": "Title"
   }
 }

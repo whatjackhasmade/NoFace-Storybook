@@ -1,5 +1,8 @@
 <svg viewBox="0 0 78 100" preserveAspectRatio="xMinYMid meet">
 	<rect x="1" y="15" width="70" height="70" rx="12" ry="12" />
-	<circle cx="64.5" cy="18.5" r="12" />
-	<circle cx="64.5" cy="18.5" r="7" />
+	<g fill="transparent">
+		<circle cx="20.5" cy="18.5" r="12" />
+		<circle cx="20.5" cy="18.5" r="7" />
+		<line x1="29" y1="27" x2="39" y2="37" />
+	</g>
 </svg>

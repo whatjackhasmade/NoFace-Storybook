@@ -1,0 +1,12 @@
+<svg viewBox="0 0 60 100" preserveAspectRatio="xMinYMid meet">
+	<circle cx="30" cy="35" r="29" />
+	<circle cx="30" cy="50" r="29" />
+	<circle cx="30" cy="65" r="29" />
+</svg>
+
+<svg viewBox="0 0 200.2 259.4" preserveAspectRatio="xMinYMid meet">
+	<path d="M164.5,173.7c-0.4,0.4-1.2,1.2-1.2,1.6c-15.6,16.8-18.4,44.4-18.8,57.6H56.1c-0.4-13.2-3.2-42-20-59.2
+		c-21.2-18.4-33.6-45.2-33.6-73.6c0-54,43.6-97.6,97.6-97.6s97.6,43.6,97.6,97.6C197.7,128.5,185.7,155.3,164.5,173.7z"/>
+	<line class="bottom-line" x1="86.2" y1="245.5" x2="114" y2="245.5"/>
+	<line class="bottom-line" x1="93.7" y1="256.9" x2="106.5" y2="256.9"/>
+</svg>

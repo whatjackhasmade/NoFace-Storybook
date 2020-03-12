@@ -1,9 +1,9 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useInView } from "react-intersection-observer"
 
 import StyledServices, { StyledService } from "./services.styles"
 
-import IconCircles from "./assets/circles.svg"
+import IconLightbulb from "./assets/lightbulb.svg"
 import IconSquare from "./assets/square.svg"
 import IconSquares from "./assets/squares.svg"
 import IconTarget from "./assets/target.svg"
@@ -23,7 +23,13 @@ const Services = ({ services, subtitle, title }) => (
       <ServicesIntro subtitle={subtitle} title={title} />
       <div className="services__items">
         {services.map(({ colour, description, href, title, type }, i) => (
-          <SingleService colour={colour} href={href} index={i + 1} type={type}>
+          <SingleService
+            colour={colour}
+            href={href}
+            index={i + 1}
+            key={`service-${title}`}
+            type={type}
+          >
             <h3>{title}</h3>
             <p className="service__description">{description}</p>
           </SingleService>
@@ -46,6 +52,9 @@ const ServicesIntro = ({ subtitle, title }) => {
   )
 }
 
+const SECONDS = 1000
+const animationLength = 4 * SECONDS
+
 const SingleService = ({
   children,
   colour = `#50e3c2`,
@@ -53,18 +62,32 @@ const SingleService = ({
   index = 1,
   type,
 }) => {
+  const [animated, setAnimated] = useState(false)
   const [ref, inView, entry] = useInView(inViewConfig)
 
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimated(false), animationLength)
+    return () => clearTimeout(timer)
+  }, [animated])
+
   let className = `service service--${type}`
+  if (animated) className += ` service--animating`
   if (inView) className += ` service--inview`
 
   return (
-    <StyledService className={className} colour={colour} ref={ref}>
+    <StyledService
+      animationLength={animationLength}
+      className={className}
+      colour={colour}
+      onFocus={() => setAnimated(() => true)}
+      onMouseEnter={() => setAnimated(() => true)}
+      ref={ref}
+    >
       <Link aria-label="Learn more" href={href}>
-        {type === `app` && <IconSquare />}
-        {type === `product` && <IconCircles />}
-        {type === `company` && <IconTarget />}
-        {type === `scale` && <IconSquares />}
+        {type === `design` && <IconTarget />}
+        {type === `improve` && <IconSquare />}
+        {type === `launch` && <IconLightbulb />}
+        {type === `consult` && <IconSquares />}
         <span className="service__index">{index}</span>
         {children}
         <LearnMore />
@@ -76,7 +99,7 @@ const SingleService = ({
 const LearnMore = () => (
   <div className="service__arrow">
     <div className="service__arrow__contents">
-      <span className="hide">Learn more</span>
+      <span>Learn more</span>
       <svg viewBox="0 0 23 15">
         <path d="M20.077 8.307H0V6.754h20.137L14.63 1.098 15.7 0 23 7.5 15.7 15l-1.069-1.098z" />
       </svg>

@@ -32,6 +32,11 @@ const StyledServices = styled.section`
         transform: translateY(0px);
       }
     }
+
+    &:focus {
+      outline: 1px dashed ${props => props.theme.primary};
+      outline-offset: 24px;
+    }
   }
 
   h1,
@@ -130,7 +135,6 @@ const StyledServices = styled.section`
 
   .service__arrow {
     margin-top: auto;
-    overflow: hidden;
 
     p {
       margin: 0;
@@ -153,7 +157,12 @@ const StyledServices = styled.section`
 
     opacity: 0;
     transform: translateX(-20px);
-    transition: 0.2s opacity ease, 0.2s transform ease;
+    transition: 0.5s opacity ease, 0.5s transform ease;
+
+    span {
+      display: inline-block;
+      margin-right: 8px;
+    }
   }
 
   .service__description {
@@ -207,7 +216,6 @@ const StyledServices = styled.section`
   .services__items {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 
     @media ${device.xs} {
       flex-direction: row;
@@ -234,44 +242,214 @@ const StyledServices = styled.section`
 
   .service {
     circle,
+    line,
+    path,
     rect {
-      vector-effect: non-scaling-stroke;
       transition: 0.4s cubic-bezier(0.4, 0.1, 0.6, 0.9);
+      transform-origin: center;
+      vector-effect: non-scaling-stroke;
     }
   }
 
-  .service--app {
+  .service--design {
+    svg {
+      circle ~ circle {
+        stroke-opacity: 0;
+      }
+    }
+
     &:active,
     &:focus,
     &:hover {
       svg {
-        circle,
-        rect {
-          stroke-opacity: 0.6;
+        circle {
+          stroke-opacity: 0.8;
         }
 
-        circle + circle {
-          stroke-opacity: 1;
+        circle:nth-of-type(2) {
+          transform: scaleY(0.55) scaleX(1);
+        }
+
+        circle:nth-of-type(3) {
+          transform: scale(0.5);
+        }
+
+        circle:nth-of-type(4) {
+          transform: scale(0.4);
         }
       }
     }
+  }
 
-    svg {
-      circle,
+  .service--launch {
+    .lightbulb_svg__bottom-line {
+      stroke-linecap: round;
+      transform: scaleX(0);
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      line,
+      path {
+        stroke-opacity: 0.8;
+      }
+
+      .lightbulb_svg__bottom-line {
+        transform: scaleX(2);
+      }
+    }
+  }
+
+  .service--improve {
+    &.service--animating {
+      svg {
+        circle,
+        rect {
+          stroke-opacity: 0.8;
+        }
+      }
+
+      svg g {
+        animation-name: searchAnimation;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+      }
+    }
+  }
+
+  @keyframes searchAnimation {
+    0% {
+      transform: translate(0px);
+    }
+
+    25% {
+      transform: translate(0px, 40px);
+    }
+
+    50% {
+      transform: translate(25px, 10px);
+    }
+
+    75% {
+      transform: translate(25px, 40px);
+    }
+  }
+
+  .service--consult {
+    rect:nth-of-type(1) {
+      opacity: 1;
+    }
+
+    rect ~ rect {
+      opacity: 0;
+    }
+
+    text {
+      opacity: 0;
+    }
+
+    &.service--animating {
       rect {
-        stroke-opacity: 0.4;
+        stroke-opacity: 0.8;
       }
 
-      circle + circle {
-        stroke-opacity: 1;
+      rect,
+      text {
+        animation-name: checklistBoxAnimation;
+        animation-duration: 3s;
+        animation-delay: 0s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
       }
+
+      rect:nth-of-type(1) {
+        animation-name: checklistBoxAnimationFirst;
+      }
+
+      rect:nth-of-type(2) {
+        animation-delay: 0.2s;
+      }
+
+      rect:nth-of-type(3) {
+        animation-delay: 0.4s;
+      }
+
+      text {
+        animation-delay: 0.2s;
+      }
+
+      text:nth-of-type(2) {
+        animation-delay: 0.4s;
+      }
+
+      text:nth-of-type(3) {
+        animation-delay: 0.6s;
+      }
+    }
+  }
+
+  @keyframes checklistBoxAnimation {
+    0% {
+      opacity: 0;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    75% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes checklistBoxAnimationFirst {
+    0% {
+      opacity: 1;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    75% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
     }
   }
 `
 
 export const StyledService = styled.article`
   svg {
+    color: ${props => props.colour};
     stroke: ${props => props.colour};
+
+    circle,
+    line,
+    path,
+    rect {
+      stroke-opacity: 0.6;
+      stroke-width: 1px;
+    }
+
+    text {
+      fill: currentColor;
+      font-size: 12px;
+      stroke: none;
+
+      fill-opacity: 0.6;
+    }
   }
 `
 

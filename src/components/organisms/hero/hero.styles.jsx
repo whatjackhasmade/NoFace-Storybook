@@ -58,10 +58,18 @@ const StyledHero = styled.section`
     @media ${device.md} {
       font-size: 48px;
     }
+
+    @media ${device.xxl} {
+      font-size: 6rem;
+    }
   }
 
   p {
     font-size: 2rem;
+
+    @media ${device.xxl} {
+      font-size: 3rem;
+    }
   }
 
   .hero__body {

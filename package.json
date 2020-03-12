@@ -103,6 +103,7 @@
     "storybook-addon-designs": "^5.1.1",
     "styled-components": "^5.0.1",
     "swr": "^0.1.18",
-    "webpack": "^4.41.2"
+    "webpack": "^4.41.2",
+    "widont": "^0.3.3"
   }
 }
