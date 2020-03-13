@@ -10,7 +10,7 @@ const PAGE_BY_TITLE = gql`
           name
           originalContent
           ... on AcfGridBlock {
-            acf {
+            gridFields: acf {
               rows {
                 basic
                 body
@@ -19,6 +19,124 @@ const PAGE_BY_TITLE = gql`
                 title
               }
               title
+            }
+          }
+          ... on AcfHeroBlock {
+            heroFields: acf {
+              backgroundColour
+              image {
+                altText
+                mediaDetails {
+                  sizes {
+                    file
+                    height
+                    mimeType
+                    name
+                    sourceUrl
+                    width
+                  }
+                }
+                sourceUrl
+              }
+              content
+              title
+              video {
+                mediaItemUrl
+              }
+            }
+          }
+          ... on AcfServicesBlock {
+            servicesFields: acf {
+              services {
+                colour
+                description
+                link {
+                  target
+                  title
+                  url
+                }
+                title
+                type
+              }
+              subtitle
+              title
+            }
+          }
+          ... on AcfSignpostsBlock {
+            servicesFields: acf {
+              items {
+                custom_details
+                description
+                image {
+                  altText
+                  mediaDetails {
+                    sizes {
+                      file
+                      height
+                      mimeType
+                      name
+                      sourceUrl
+                      width
+                    }
+                  }
+                  sourceUrl
+                }
+                link {
+                  target
+                  title
+                  url
+                }
+                page {
+                  ... on Page {
+                    id
+                    featuredImage {
+                      altText
+                      mediaDetails {
+                        sizes {
+                          file
+                          height
+                          mimeType
+                          name
+                          sourceUrl
+                          width
+                        }
+                      }
+                      sourceUrl
+                    }
+                    seo {
+                      metaDesc
+                    }
+                    slug
+                    title
+                  }
+                  ... on Post {
+                    id
+                    featuredImage {
+                      altText
+                      mediaDetails {
+                        sizes {
+                          file
+                          height
+                          mimeType
+                          name
+                          sourceUrl
+                          width
+                        }
+                      }
+                      sourceUrl
+                    }
+                    seo {
+                      metaDesc
+                    }
+                    slug
+                    title
+                  }
+                }
+                title
+                video {
+                  mediaItemUrl
+                }
+              }
             }
           }
         }

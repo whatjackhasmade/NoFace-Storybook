@@ -1,4 +1,5 @@
 import React from "react"
+import he from "he"
 import Parser from "html-react-parser"
 import widont from "widont"
 
@@ -6,8 +7,14 @@ import Link from "atoms/link/link"
 
 const config = {
   replace: data => {
-    const { attribs, children, type } = data
-    if (name === `p`) return widont(children, `html`) // Experimental
+    const { attribs, children, name, type } = data
+    if (name === `p`) {
+      const [child] = children
+      const { data, type } = child
+      if (type === `text`) {
+        return <p>{he.decode(widont(data, `html`))}</p>
+      }
+    }
 
     if (attribs && attribs.href) {
       const { children, href } = attribs

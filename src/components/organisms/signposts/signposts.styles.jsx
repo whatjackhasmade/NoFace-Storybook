@@ -80,6 +80,12 @@ const StyledSignPosts = styled.nav`
         display: none;
       }
     }
+
+    &:focus,
+    &:focus-within {
+      outline: 1px dashed ${props => props.theme.white};
+      outline-offset: 0px;
+    }
   }
 
   h1,
@@ -104,6 +110,11 @@ const StyledSignPosts = styled.nav`
     object-fit: cover;
   }
 
+  p {
+    color: ${props => props.theme.grey300};
+    transition: 0.2s color ease;
+  }
+
   .signposts__contents {
     display: flex;
     flex-direction: column;
@@ -118,12 +129,8 @@ const StyledSignPosts = styled.nav`
   .signpost {
     flex: 1;
     min-height: 200px;
-    padding: 24px 16px;
+    padding: 32px 24px;
     position: relative;
-
-    @media ${device.xs} {
-      padding: 32px 24px;
-    }
 
     @media ${device.md} {
       padding: 48px 32px;
@@ -139,6 +146,10 @@ const StyledSignPosts = styled.nav`
     &:hover {
       &::before {
         opacity: 0.5;
+      }
+
+      p {
+        color: ${props => props.theme.white};
       }
     }
 
@@ -156,6 +167,15 @@ const StyledSignPosts = styled.nav`
       opacity: 0.8;
       transition: 1s opacity ease;
     }
+
+    & + .signpost {
+      margin-top: 32px;
+
+      @media ${device.md} {
+        margin-left: 32px;
+        margin-top: 0;
+      }
+    }
   }
 
   .signpost__content {
@@ -163,15 +183,7 @@ const StyledSignPosts = styled.nav`
     z-index: 3;
   }
 
-  .signpost__link {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 4;
-  }
-
+  .signpost__link,
   .signpost__media {
     height: 100%;
     left: 0;
@@ -180,6 +192,10 @@ const StyledSignPosts = styled.nav`
     top: 0;
     width: 100%;
     z-index: 1;
+  }
+
+  .signpost__link {
+    z-index: 4;
   }
 `
 

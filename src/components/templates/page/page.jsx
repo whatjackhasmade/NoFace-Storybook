@@ -18,7 +18,7 @@ const Page = props => {
     networkPolicy: `no-cache`,
     variables: { title },
   })
-  console.clear()
+
   if (loading) return null
   if (error) return `Error! ${error}`
   const foundPage = data?.pages?.nodes.length === 1

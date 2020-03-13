@@ -32,7 +32,8 @@ const StyledServices = styled.section`
       }
     }
 
-    &:focus {
+    &:focus,
+    &:focus-within {
       outline: 1px dashed ${props => props.theme.primary};
       outline-offset: 24px;
     }

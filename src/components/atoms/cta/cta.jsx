@@ -6,9 +6,12 @@ import Link from "atoms/link/link"
 
 const CTA = ({ children, className, href, target }) => (
   <StyledCTA>
-    <Link className={className} href={href} target={target}>
-      {children}
-    </Link>
+    {href && (
+      <Link className={className} href={href} target={target}>
+        {children}
+      </Link>
+    )}
+    {!href && <span className={className}>{children}</span>}
   </StyledCTA>
 )
 

@@ -37,7 +37,7 @@ const Hero = ({
       />
     )}
     {image && <HeroImage image={image} />}
-    {video && <Video className="hero__video" video={video} />}
+    {video && <Video className="hero__video" video={video.mediaItemUrl} />}
   </StyledHero>
 )
 
@@ -70,6 +70,7 @@ const HeroContent = ({ children, content, index, title }) => {
 
 const HeroImage = ({ image }) => {
   const sizes = image?.mediaDetails?.sizes
+  if (!sizes) return null
   const hasSizes = sizes.length > 0
   if (!hasSizes) return null
   const sortedSizes = sizes.sort((a, b) => b.width - a.width)

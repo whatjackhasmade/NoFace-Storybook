@@ -22,12 +22,12 @@ const Services = ({ services, subtitle, title }) => (
     <div className="grid">
       <ServicesIntro subtitle={subtitle} title={title} />
       <div className="services__items">
-        {services.map(({ colour, description, href, title, type }, i) => (
+        {services.map(({ colour, description, link, title, type }, i) => (
           <SingleService
             colour={colour}
-            href={href}
             index={i + 1}
             key={`service-${title}`}
+            link={link}
             type={type}
           >
             <h3>{title}</h3>
@@ -58,8 +58,8 @@ const animationLength = 4 * SECONDS
 const SingleService = ({
   children,
   colour = `#50e3c2`,
-  href,
   index = 1,
+  link,
   type,
 }) => {
   const [animated, setAnimated] = useState(false)
@@ -83,7 +83,10 @@ const SingleService = ({
       onMouseEnter={() => setAnimated(() => true)}
       ref={ref}
     >
-      <Link aria-label="Learn more" href={href}>
+      <Link aria-label="Learn more" href={link.url} target={link.target}>
+        {link.title && (
+          <span className="hidden">Click to view the {link.title} page</span>
+        )}
         {type === `design` && <IconTarget />}
         {type === `improve` && <IconSquare />}
         {type === `launch` && <IconLightbulb />}
