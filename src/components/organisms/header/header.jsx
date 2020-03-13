@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { arrayOf, number, shape, string } from "prop-types"
-import { hasBrowser } from "helpers"
+import { generateID, hasBrowser } from "helpers"
 
 import StyledHeader from "./header.styles"
 
@@ -35,7 +35,7 @@ const Header = ({ menus }) => {
             </div>
             <HeaderToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
             {menus.map(menu => (
-              <HeaderNav menu={menu} />
+              <HeaderNav key={`header-nav-${generateID()}`} menu={menu} />
             ))}
           </div>
           <HeaderToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
@@ -54,7 +54,7 @@ const HeaderNav = ({ menu }) => {
   return (
     <nav className="header__menu">
       {items.map(({ id, label, url }) => (
-        <Link href={url} key={id}>
+        <Link href={url} key={`header-item-${generateID()}`}>
           {label}
         </Link>
       ))}

@@ -33,6 +33,7 @@
     "dev": "npm run storybook",
     "develop": "npm run storybook",
     "format": "prettier --write \"**/*.{css,gql,js,json,jsx,md,scss}\"",
+    "generate": "graphql-codegen",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint-fix": "npm run pretest -- --fix",
     "postinstall": "git submodule update --init --recursive || true",
@@ -60,7 +61,10 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@apollo/client": "^3.0.0-beta.40",
     "@babel/core": "^7.8.6",
+    "@graphql-codegen/cli": "^1.13.0",
+    "@graphql-codegen/fragment-matcher": "^1.13.0",
     "@n8tb1t/use-scroll-position": "^1.0.43",
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-docs": "^5.3.14",
@@ -70,6 +74,8 @@
     "@storybook/addon-viewport": "^5.3.14",
     "@storybook/addons": "^5.3.14",
     "@storybook/react": "^5.3.14",
+    "apollo-boost": "^0.4.7",
+    "apollo-cache-inmemory": "^1.6.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-inline-react-svg": "^1.1.0",

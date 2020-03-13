@@ -1,5 +1,6 @@
 import React from "react"
 import { Formik } from "formik"
+import { generateID } from "helpers"
 
 import StyledFooter from "./footer.styles"
 
@@ -31,7 +32,7 @@ const Footer = ({ email, menus, telephone }) => {
         </section>
         <section className="footer__menus">
           {menus.map(menu => (
-            <FooterNav menu={menu} />
+            <FooterNav key={`footer-menu-${generateID()}`} menu={menu} />
           ))}
         </section>
       </div>
@@ -50,7 +51,7 @@ const FooterNav = ({ menu }) => {
     <nav className="footer__navigation">
       {title && <h2>{title}</h2>}
       {items.map(({ id, label, url }) => (
-        <Link href={url} key={id}>
+        <Link href={url} key={`footer-item-${generateID()}`}>
           {label}
         </Link>
       ))}

@@ -58,9 +58,17 @@ module.exports = ({ config }) => {
       helpers: path.join(path.dirname(__dirname), `src/components/helpers`),
       knobs: path.join(path.dirname(__dirname), `src/data/knobs`),
       molecules: path.join(path.dirname(__dirname), `src/components/molecules`),
+      mutations: path.join(
+        path.dirname(__dirname),
+        `src/components/particles/mutations`
+      ),
       organisms: path.join(path.dirname(__dirname), `src/components/organisms`),
       pages: path.join(path.dirname(__dirname), `src/components/pages`),
       particles: path.join(path.dirname(__dirname), `src/components/particles`),
+      queries: path.join(
+        path.dirname(__dirname),
+        `src/components/particles/queries`
+      ),
       templates: path.join(path.dirname(__dirname), `src/components/templates`),
     },
   }

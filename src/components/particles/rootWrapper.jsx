@@ -2,11 +2,9 @@ import "intersection-observer"
 import React from "react"
 import fetch from "isomorphic-unfetch"
 import { SWRConfig } from "swr"
-import { ThemeProvider } from "styled-components"
 
+import ApolloWordPress from "./apollo/wrapper"
 import ApplicationState from "./context/applicationState"
-import GlobalStyle from "./globalStyle"
-import ThemeDefault from "./themeDefault"
 
 const fetcher = async url => {
   const response = await fetch(url)
@@ -21,14 +19,9 @@ const RootWrapper = ({ children }) => (
       fetcher: (...args) => fetcher(...args),
     }}
   >
-    <ApplicationState>
-      <ThemeProvider theme={ThemeDefault}>
-        <>
-          <GlobalStyle />
-          <main className="wrapper">{children}</main>
-        </>
-      </ThemeProvider>
-    </ApplicationState>
+    <ApolloWordPress>
+      <ApplicationState>{children}</ApplicationState>
+    </ApolloWordPress>
   </SWRConfig>
 )
 

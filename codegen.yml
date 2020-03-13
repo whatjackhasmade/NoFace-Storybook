@@ -1,0 +1,5 @@
+schema: http://noface.local/wp/graphql
+generates:
+  ./src/components/particles/apollo/fragments.json:
+    plugins:
+      - fragment-matcher

@@ -1,11 +1,27 @@
+import "intersection-observer"
 import React from "react"
+import fetch from "isomorphic-unfetch"
 import { addDecorator, addParameters, configure } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
 import { DocsPage, DocsContainer } from "@storybook/addon-docs/blocks"
 import { withKnobs } from "@storybook/addon-knobs"
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport"
 
-import RootWrapper from "../src/components/particles/rootWrapper"
+import { SWRConfig } from "swr"
+import { ThemeProvider } from "styled-components"
+
+import GlobalStyle from "../src/components/particles/globalStyle"
+import ThemeDefault from "../src/components/particles/themeDefault"
+
+import ApolloWrapper from "../src/components/particles/apollo/wrapper"
+import ApplicationState from "../src/components/particles/context/applicationState"
+
+const fetcher = async url => {
+  const response = await fetch(url)
+  if (response.status !== 200) return response
+  const jsonResponse = await response.json()
+  return jsonResponse
+}
 
 // Option defaults:
 addParameters({
@@ -30,7 +46,24 @@ addParameters({
 // automatically import all files ending in *.stories.js
 configure(require.context("../src/components", true, /\.stories\.js$/), module)
 
-const GlobalDecorator = storyFn => <RootWrapper>{storyFn()}</RootWrapper>
+const GlobalDecorator = storyFn => (
+  <SWRConfig
+    value={{
+      fetcher: (...args) => fetcher(...args),
+    }}
+  >
+    <ApolloWrapper>
+      <ApplicationState>
+        <ThemeProvider theme={ThemeDefault}>
+          <>
+            <GlobalStyle />
+            <main className="wrapper">{storyFn()}</main>
+          </>
+        </ThemeProvider>
+      </ApplicationState>
+    </ApolloWrapper>
+  </SWRConfig>
+)
 
 addDecorator(GlobalDecorator)
 addDecorator(withKnobs)

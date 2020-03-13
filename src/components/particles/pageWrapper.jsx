@@ -13,7 +13,7 @@ const ProcessedProps = props => {
   const footerMenuOne = useFooterMenuOne()
   const footerMenuTwo = useFooterMenuTwo()
   const headerMenu = useHeaderMenu()
-  const queries = queryString.parse(props.location.search)
+  const queries = queryString.parse(props?.location?.search)
 
   const newProps = {
     ...props,
