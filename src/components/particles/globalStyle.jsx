@@ -256,28 +256,6 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	.heading--title {
-		font-weight: 400;
-
-		@media ${device.xl} {
-			font-size: 66px;
-		}
-	}
-
-	.subheading {
-		color: ${props => props.theme.grey700};
-		font-size: 12px;
-		line-height: 15px;
-		letter-spacing: 0.2em;
-		text-transform: uppercase;
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		& + .subheading {
-			margin-top: 8px;
-		}
-	}
-
 	html {
 		box-sizing: border-box;
 		overflow-y: scroll;
@@ -298,10 +276,6 @@ const GlobalStyle = createGlobalStyle`
 			&.scroll--fixed {
 				overflow: hidden;
 			}
-		}
-
-		&.html--dashboard {
-			overflow-y: initial;
 		}
 	}
 
@@ -405,40 +379,6 @@ const GlobalStyle = createGlobalStyle`
 
 	.wrapper {
 		margin: 0 auto;
-	}
-
-	.article--gutenberg {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: 1230px;
-
-		@media ${device.sm} {
-			padding: 0 30px;
-		}
-
-		& *:first-child {
-			margin-top: ${props => props.theme.spacingHuge};
-		}
-	}
-
-	{ TODO: Refactor }
-
-	#gatsby-focus-wrapper {
-		> {
-			& h1,
-			& h2,
-			& h3,
-			& h4,
-			& h5,
-			& h6,
-			& p,
-			& ol,
-			& ul {
-				margin-left: auto;
-				margin-right: auto;
-				max-width: 1170px;
-			}
-		}
 	}
 
 	/* Article / Blog styles */
@@ -615,64 +555,12 @@ const GlobalStyle = createGlobalStyle`
 		.table__currency {
 			text-align: right;
 		}
-
-		.row {
-
-		}
-
-		.row--blue {
-			background-color: ${props => props.theme.blue100};
-
-			&:active,
-			&:focus,
-			&:hover {
-				background-color: ${props => props.theme.blue200};
-			}
-		}
-
-		.row--green {
-			background-color: ${props => props.theme.green100};
-
-			&:active,
-			&:focus,
-			&:hover {
-				background-color: ${props => props.theme.green200};
-			}
-		}
-
-		.row--purple {
-			background-color: ${props => props.theme.purple100};
-
-			&:active,
-			&:focus,
-			&:hover {
-				background-color: ${props => props.theme.purple200};
-			}
-		}
-
-		.row--red {
-			background-color: ${props => props.theme.red100};
-
-			&:active,
-			&:focus,
-			&:hover {
-				background-color: ${props => props.theme.red200};
-			}
-		}
 	}
-
 
 	.wrapper {
 		flex: 1;
 		overflow: hidden;
 		width: 100%;
-	}
-
-	.wrapper--center {
-    align-items: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 	}
 
 	.embed {
