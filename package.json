@@ -90,6 +90,7 @@
     "gatsby-cli": "^2.9.0",
     "gatsby-image": "^2.2.37",
     "gatsby-link": "^2.2.27",
+    "graphql-tag": "^2.10.3",
     "he": "^1.2.0",
     "html-react-parser": "^0.10.0",
     "intersection-observer": "^0.7.0",

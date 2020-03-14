@@ -1,0 +1,14 @@
+fragment MediaData on Media {
+  altText
+  mediaDetails {
+    sizes {
+      file
+      height
+      mimeType
+      name
+      sourceUrl
+      width
+    }
+  }
+  sourceUrl
+}

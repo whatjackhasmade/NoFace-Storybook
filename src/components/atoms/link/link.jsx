@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "gatsby-link"
 import { bool, func, node, string } from "prop-types"
-import { getHostName, isInternal } from "helpers"
+import { isInternal, relativeURL } from "helpers"
 
 const AnchorLink = ({
   children,
@@ -21,12 +21,7 @@ const AnchorLink = ({
     return null
   }
 
-  href = href.replace(process.env.GATSBY_DOMAIN, ``)
-  href = href.replace(process.env.GATSBY_WORDPRESS_API, ``)
-  href = href.replace(
-    `https://${getHostName(process.env.GATSBY_WORDPRESS_API)}`,
-    ``
-  )
+  href = relativeURL(href)
 
   // If the URL isn't internal, return an anchor tag
   if (!isInternal(href))

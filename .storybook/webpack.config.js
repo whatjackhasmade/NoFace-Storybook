@@ -32,6 +32,12 @@ module.exports = ({ config }) => {
     use: ["@svgr/webpack"],
   })
 
+    config.module.rules.push({
+      test: /\.(graphql|gql)$/,
+      exclude: /node_modules/,
+      loader: "graphql-tag/loader",
+    })
+
   config.module.rules.unshift({
     test: /\.js$/,
     use: [

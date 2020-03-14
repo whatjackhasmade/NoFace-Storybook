@@ -1,0 +1,61 @@
+#import "../block/grid.gql"
+#import "../block/hero.gql"
+#import "../block/services.gql"
+#import "../block/signposts.gql"
+
+query PAGE_BY_TITLE($title: String!) {
+  pages(where: { title: $title }) {
+    nodes {
+      id
+      title
+      blocks {
+        name
+        originalContent
+        ... on AcfGridBlock {
+          ...GridData
+        }
+        ... on AcfHeroBlock {
+          ...HeroData
+        }
+        ... on AcfServicesBlock {
+          ...ServicesData
+        }
+        ... on AcfSignpostsBlock {
+          ...SignpostsData
+        }
+      }
+    }
+  }
+  footerMenus: menus(where: { location: PRIMARY }) {
+    nodes {
+      id
+      name
+      slug
+      menuItems {
+        nodes {
+          id
+          label
+          target
+          title
+          url
+        }
+      }
+    }
+  }
+  headerMenus: menus(where: { location: PRIMARY }) {
+    nodes {
+      id
+      name
+      slug
+      menuItems {
+        nodes {
+          id
+          label
+          target
+          title
+          url
+        }
+      }
+    }
+  }
+}

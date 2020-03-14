@@ -118,6 +118,13 @@ const GlobalStyle = createGlobalStyle`
 		border: 2px solid ${props => props.theme.grey600};
 	}
 
+	body,
+	#root {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
 	a {
 		position: relative;
 
@@ -258,6 +265,7 @@ const GlobalStyle = createGlobalStyle`
 
 	html {
 		box-sizing: border-box;
+		min-height: 100vh;
 		overflow-y: scroll;
 
 		font-family: "Circular", "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;

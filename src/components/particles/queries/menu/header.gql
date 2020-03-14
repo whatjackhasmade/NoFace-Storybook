@@ -1,0 +1,18 @@
+query MENU_HEADER {
+  menus(where: { location: PRIMARY }) {
+    nodes {
+      id
+      name
+      slug
+      menuItems {
+        nodes {
+          id
+          label
+          target
+          title
+          url
+        }
+      }
+    }
+  }
+}

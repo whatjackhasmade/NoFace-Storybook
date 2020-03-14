@@ -1,10 +1,12 @@
 import React from "react"
 import { useQuery } from "@apollo/client"
 
-import PAGE_BY_TITLE from "queries/page/PAGE_BY_TITLE"
+import PAGE_BY_TITLE from "queries/page/PAGE_BY_TITLE.gql"
 
 import ComponentParser from "particles/componentParser"
 import SEO from "particles/seo"
+
+import Loader from "molecules/loader/loader"
 
 import Footer from "organisms/footer/footer"
 import Header from "organisms/header/header"
@@ -19,7 +21,7 @@ const Page = props => {
     variables: { title },
   })
 
-  if (loading) return null
+  if (loading) return <Loader />
   if (error) return `Error! ${error}`
   const foundPage = data?.pages?.nodes.length === 1
   if (!foundPage) return `Error: No page found`
@@ -30,7 +32,14 @@ const Page = props => {
     blocks: single.blocks,
   }
 
-  return <PageTemplate {...props} pageContext={context} />
+  return (
+    <PageTemplate
+      {...props}
+      footerMenus={data?.footerMenus?.nodes}
+      headerMenus={data?.headerMenus?.nodes}
+      pageContext={context}
+    />
+  )
 }
 
 const PageTemplate = ({ footerMenus, headerMenus, pageContext }) => {
@@ -41,7 +50,9 @@ const PageTemplate = ({ footerMenus, headerMenus, pageContext }) => {
     <>
       {seo && <SEO {...seo} />}
       <Header menus={headerMenus} />
-      {blocks && <ComponentParser content={blocks} />}
+      <main className="wrapper">
+        {blocks && <ComponentParser content={blocks} />}
+      </main>
       <Footer menus={footerMenus} />
     </>
   )

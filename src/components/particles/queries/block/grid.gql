@@ -1,0 +1,12 @@
+fragment GridData on AcfGridBlock {
+  gridFields: acf {
+    rows {
+      basic
+      body
+      content
+      subtitle
+      title
+    }
+    title
+  }
+}

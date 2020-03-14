@@ -57,7 +57,7 @@ const GlobalDecorator = storyFn => (
         <ThemeProvider theme={ThemeDefault}>
           <>
             <GlobalStyle />
-            <main className="wrapper">{storyFn()}</main>
+            {storyFn()}
           </>
         </ThemeProvider>
       </ApplicationState>
