@@ -1,64 +1,59 @@
 import React from "react"
 import { Container, Row, Col } from "react-grid-system"
 import { Hidden, setConfiguration } from "react-grid-system"
+import { useQuery } from "@apollo/client"
 
-// PARTICLES
-import ParseHTML from "particles/parseHTML"
+import ComponentParser from "particles/componentParser"
 import SEO from "particles/seo"
+import POST_BY_TITLE from "queries/post/POST_BY_TITLE.gql"
+
+import Loader from "molecules/loader/loader"
 
 import Footer from "organisms/footer/footer"
 import Header from "organisms/header/header"
 
-const Post = ({ footerMenus, headerMenus, pageContext }) => {
-  if (!pageContext) return null
-  const { author, date, detailedFooter, featuredImage, title } = pageContext
-  const { categories, seo } = pageContext
-  const acf = pageContext?.PostFields
+const Post = props => {
+  const title = props?.postTitle
 
-  const foldData = {
-    avatar,
-    author: author.name,
-    background: featuredImage.xl,
-    date,
-    light: true,
-    title,
+  if (!title) return <PostTemplate {...props} />
+
+  const { data, error, loading } = useQuery(POST_BY_TITLE, {
+    networkPolicy: `no-cache`,
+    variables: { title },
+  })
+
+  if (loading) return <Loader />
+  if (error) return `Error! ${error}`
+  const foundPage = data?.posts?.nodes.length === 1
+  if (!foundPage) return `Error: No page found`
+  const [single] = data?.posts?.nodes
+
+  const context = {
+    ...props.pageContext,
+    blocks: single.blocks,
   }
 
-  const hasCategory = categories.nodes && categories?.nodes?.length > 0
-  const category = hasCategory && categories?.nodes[0]?.slug
-  const hasContinued = acf.contentContinued && acf.sidebarMedia
-  const hasGallery = acf.galleryEnabled && acf?.gallery?.length > 0
-  const hasRelated = acf.relatedPosts && acf?.relatedPosts?.length > 0
+  return (
+    <PostTemplate
+      {...props}
+      footerMenus={data?.footerMenus?.nodes}
+      headerMenus={data?.headerMenus?.nodes}
+      pageContext={context}
+    />
+  )
+}
+
+const PostTemplate = ({ footerMenus, headerMenus, pageContext }) => {
+  const blocks = pageContext?.blocks
+  const seo = pageContext?.seo
 
   return (
     <>
-      <SEO {...seo} />
+      {seo && <SEO {...seo} />}
       <Header menus={headerMenus} />
-      <Fold {...foldData} />
-      <Container>
-        <Row>
-          <Col md={4}>
-            <MetaIntro>
-              <p>{seo.metaDesc}</p>
-            </MetaIntro>
-            <Instagram />
-          </Col>
-          <Col md={7} offset={{ md: 1 }}>
-            {acf.content && <article>{ParseHTML(acf.content)}</article>}
-          </Col>
-        </Row>
-      </Container>
-      {hasRelated && (
-        <>
-          <Container>
-            <Row>
-              <Col>
-                <h2>Continue Reading Our Chronicles</h2>
-              </Col>
-            </Row>
-          </Container>
-        </>
-      )}
+      <main className="wrapper">
+        {blocks && <ComponentParser content={blocks} />}
+      </main>
       <Footer menus={footerMenus} />
     </>
   )
