@@ -4,16 +4,16 @@ import Post from "templates/post/post"
 
 export const previewPage = () => {
   const urlParams = new URLSearchParams(window.location.search)
-  const title = urlParams?.get(`title`)
+  const uri = urlParams?.get(`uri`)
 
-  return <Page pageTitle={title} />
+  return <Page uri={uri} />
 }
 
 export const previewPost = () => {
   const urlParams = new URLSearchParams(window.location.search)
-  const title = urlParams?.get(`title`)
+  const uri = urlParams?.get(`uri`)
 
-  return <Post postTitle={title} />
+  return <Post uri={uri} />
 }
 
 export default {

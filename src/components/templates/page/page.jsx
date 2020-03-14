@@ -1,10 +1,10 @@
 import React from "react"
 import { useQuery } from "@apollo/client"
 
-import PAGE_BY_TITLE from "queries/page/PAGE_BY_TITLE.gql"
-
 import ComponentParser from "particles/componentParser"
 import SEO from "particles/seo"
+
+import NODE_BY_URI from "queries/node/NODE_BY_URI.gql"
 
 import Loader from "molecules/loader/loader"
 
@@ -12,20 +12,21 @@ import Footer from "organisms/footer/footer"
 import Header from "organisms/header/header"
 
 const Page = props => {
-  const title = props?.pageTitle
+  const uri = props?.uri
 
-  if (!title) return <PageTemplate {...props} />
+  if (!uri) return <PageTemplate {...props} />
 
-  const { data, error, loading } = useQuery(PAGE_BY_TITLE, {
+  const { data, error, loading } = useQuery(NODE_BY_URI, {
     networkPolicy: `no-cache`,
-    variables: { title },
+    variables: { uri },
   })
+
+  console.log(data)
 
   if (loading) return <Loader />
   if (error) return `Error! ${error}`
-  const foundPage = data?.pages?.nodes.length === 1
-  if (!foundPage) return `Error: No page found`
-  const [single] = data?.pages?.nodes
+  const single = data?.nodeByUri
+  if (!single) return `Error! No page found`
 
   const context = {
     ...props.pageContext,

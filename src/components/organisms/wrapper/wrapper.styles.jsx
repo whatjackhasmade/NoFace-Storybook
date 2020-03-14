@@ -2,68 +2,62 @@ import styled from "styled-components"
 import device from "particles/mediaQueries"
 
 const StyledWrapper = styled.article`
-  margin: 96px 0;
+  margin: 64px 0;
 
   @media ${device.md} {
-    margin: 128px 0;
-  }
-
-  @media ${device.xl} {
-    margin: 156px 0;
-  }
-
-  @media ${device.xxl} {
-    margin: 196px 0;
+    margin: 96px 0;
   }
 
   .component-wrapper__contents {
-    max-width: 740px;
+    max-width: 880px;
   }
 
-  & *:first-child {
-    margin-top: 0;
-  }
+  .component-wrapper__contents {
+    & *:first-child {
+      margin-top: 0;
+    }
 
-  > * + * {
-    margin-top: 16px;
-  }
+    > * + * {
+      margin-top: 16px;
+    }
 
-  > h2 + * {
-    margin-top: 24px;
-  }
+    > h2 + * {
+      margin-top: 24px;
+    }
 
-  > img + *,
-  > figure + * {
-    margin-top: 32px;
-  }
+    > img + *,
+    > figure + * {
+      margin-top: 32px;
+    }
 
-  > * + h2 {
-    margin-top: 64px;
-  }
+    > * + h2 {
+      margin-top: 64px;
+    }
 
-  > * + h3 {
-    margin-top: 48px;
-  }
+    > * + h3 {
+      margin-top: 48px;
+    }
 
-  > * + img {
-    margin-top: 32px;
-  }
+    > * + img {
+      margin-top: 32px;
+    }
 
-  > * + h4 {
-    margin-top: 48px;
-  }
+    > * + h4 {
+      margin-top: 48px;
+    }
 
-  > img + img,
-  > figure + figure {
-    margin-top: 32px;
-  }
+    > img + img,
+    > figure + figure {
+      margin-top: 32px;
+    }
 
-  > h2 + h3 {
-    margin-top: 32px;
-  }
+    > h2 + h3 {
+      margin-top: 32px;
+    }
 
-  > h3 + h4 {
-    margin-top: 32px;
+    > h3 + h4 {
+      margin-top: 32px;
+    }
   }
 `
 

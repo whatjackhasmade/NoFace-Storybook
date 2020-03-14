@@ -17,6 +17,7 @@ const components = {
 }
 
 const wrapperArray = [
+  `core/code`,
   `core/cover`,
   `core/heading`,
   `core/image`,

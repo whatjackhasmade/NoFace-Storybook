@@ -5,7 +5,8 @@ import { useQuery } from "@apollo/client"
 
 import ComponentParser from "particles/componentParser"
 import SEO from "particles/seo"
-import POST_BY_TITLE from "queries/post/POST_BY_TITLE.gql"
+
+import NODE_BY_URI from "queries/node/NODE_BY_URI.gql"
 
 import Loader from "molecules/loader/loader"
 
@@ -13,20 +14,21 @@ import Footer from "organisms/footer/footer"
 import Header from "organisms/header/header"
 
 const Post = props => {
-  const title = props?.postTitle
+  const uri = props?.uri
 
-  if (!title) return <PostTemplate {...props} />
+  if (!uri) return <PostTemplate {...props} />
 
-  const { data, error, loading } = useQuery(POST_BY_TITLE, {
+  const { data, error, loading } = useQuery(NODE_BY_URI, {
     networkPolicy: `no-cache`,
-    variables: { title },
+    variables: { uri },
   })
 
   if (loading) return <Loader />
   if (error) return `Error! ${error}`
-  const foundPage = data?.posts?.nodes.length === 1
-  if (!foundPage) return `Error: No page found`
-  const [single] = data?.posts?.nodes
+  const single = data?.nodeByUri
+  if (!single) return `Error! No post found`
+  const revisions = single?.revisions?.nodes
+  const hasRevisions = revisions && revisions.length > 0
 
   const context = {
     ...props.pageContext,

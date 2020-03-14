@@ -92,8 +92,9 @@ const HeroImage = ({ image }) => {
           image =>
             image.query && (
               <source
-                srcset={image.sourceUrl}
+                key={`${image.query}-${image.sourceUrl}`}
                 media={`(min-width: ${image.query}px)`}
+                srcSet={image.sourceUrl}
               />
             )
         )}

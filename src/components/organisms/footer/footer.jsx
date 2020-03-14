@@ -41,9 +41,15 @@ const Footer = ({ email, menus, telephone }) => {
 }
 
 const FooterNav = ({ menu }) => {
-  const items = menu?.menuItems?.nodes
+  let items = menu?.menuItems?.nodes
   const title = menu?.title
   if (!items) return null
+  items = items.filter(item => {
+    const url = item?.url
+    if (!url) return false
+    const isLive = !url.includes(`?page_id`)
+    return isLive
+  })
   const hasItems = items.length > 0
   if (!hasItems) return null
 

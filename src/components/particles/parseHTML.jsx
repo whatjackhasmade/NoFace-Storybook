@@ -8,12 +8,14 @@ import Link from "atoms/link/link"
 const config = {
   replace: data => {
     const { attribs, children, name, type } = data
-    if (name === `p`) {
-      const [child] = children
-      const { data, type } = child
-      if (type === `text`) {
-        return <p>{he.decode(widont(data, `html`))}</p>
-      }
+    if (name === `p` && children) {
+      const hasChildren = children.length > 0
+      children.map(child => {
+        const { data, type } = child
+        if (type === `text`) {
+          return <p>{he.decode(widont(data, `html`))}</p>
+        }
+      })
     }
 
     if (attribs && attribs.href) {

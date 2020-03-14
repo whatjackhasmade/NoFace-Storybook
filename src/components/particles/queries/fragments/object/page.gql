@@ -1,0 +1,47 @@
+#import "../block/grid.gql"
+#import "../block/hero.gql"
+#import "../block/services.gql"
+#import "../block/signposts.gql"
+
+fragment PageFields on Page {
+  id
+  blocks {
+    name
+    originalContent
+    ... on AcfGridBlock {
+      ...GridData
+    }
+    ... on AcfHeroBlock {
+      ...HeroData
+    }
+    ... on AcfServicesBlock {
+      ...ServicesData
+    }
+    ... on AcfSignpostsBlock {
+      ...SignpostsData
+    }
+  }
+  revisions {
+    nodes {
+      databaseId
+      title
+      blocks {
+        name
+        originalContent
+        ... on AcfGridBlock {
+          ...GridData
+        }
+        ... on AcfHeroBlock {
+          ...HeroData
+        }
+        ... on AcfServicesBlock {
+          ...ServicesData
+        }
+        ... on AcfSignpostsBlock {
+          ...SignpostsData
+        }
+      }
+    }
+  }
+  title
+}

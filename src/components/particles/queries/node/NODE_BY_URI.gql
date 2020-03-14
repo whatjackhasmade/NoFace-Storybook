@@ -1,0 +1,45 @@
+#import "../fragments/object/post.gql"
+#import "../fragments/object/page.gql"
+
+query NODE_BY_URI($uri: String!) {
+  nodeByUri(uri: $uri) {
+    ... on Page {
+      ...PageFields
+    }
+    ... on Post {
+      ...PostFields
+    }
+  }
+  footerMenus: menus(where: { location: PRIMARY }) {
+    nodes {
+      id
+      name
+      slug
+      menuItems {
+        nodes {
+          id
+          label
+          target
+          title
+          url
+        }
+      }
+    }
+  }
+  headerMenus: menus(where: { location: PRIMARY }) {
+    nodes {
+      id
+      name
+      slug
+      menuItems {
+        nodes {
+          id
+          label
+          target
+          title
+          url
+        }
+      }
+    }
+  }
+}
