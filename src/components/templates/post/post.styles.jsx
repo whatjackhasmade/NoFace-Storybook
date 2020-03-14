@@ -2,7 +2,7 @@ import styled from "styled-components"
 import device from "particles/mediaQueries"
 
 const StyledPost = styled.article`
-  ..component-wrapper {
+  .component-wrapper {
     margin: 96px 0;
 
     @media ${device.md} {
@@ -32,4 +32,4 @@ const StyledPost = styled.article`
   }
 `
 
-export default StyledWrapper
+export default StyledPost

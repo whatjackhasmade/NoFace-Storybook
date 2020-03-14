@@ -3,6 +3,8 @@ import { Container, Row, Col } from "react-grid-system"
 import { Hidden, setConfiguration } from "react-grid-system"
 import { useQuery } from "@apollo/client"
 
+import StyledPost from "./post.styles"
+
 import ComponentParser from "particles/componentParser"
 import SEO from "particles/seo"
 
@@ -54,7 +56,9 @@ const PostTemplate = ({ footerMenus, headerMenus, pageContext }) => {
       {seo && <SEO {...seo} />}
       <Header menus={headerMenus} />
       <main className="wrapper">
-        {blocks && <ComponentParser content={blocks} />}
+        <StyledPost>
+          {blocks && <ComponentParser content={blocks} />}
+        </StyledPost>
       </main>
       <Footer menus={footerMenus} />
     </>

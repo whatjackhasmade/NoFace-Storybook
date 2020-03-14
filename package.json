@@ -18,9 +18,8 @@
     "last 2 versions"
   ],
   "scripts": {
-    "build": "npm run lint && npm run build-lib && build-storybook",
-    "build-lib": "tsc && npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-png-to-lib && npm run copy-woff2-to-lib",
-    "build-lib-watch": "tsc -w",
+    "build": "npm run lint-fix && build-storybook",
+    "build-lib": "npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-png-to-lib && npm run copy-woff2-to-lib",
     "ci:manual": "start-server-and-test dev http://localhost:7774/?path=/story/ cypress:open",
     "ci:test": "start-server-and-test dev http://localhost:7774/?path=/story/ cypress:run",
     "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib",
@@ -34,8 +33,8 @@
     "develop": "npm run storybook",
     "format": "prettier --write \"**/*.{css,gql,js,json,jsx,md,scss}\"",
     "generate": "graphql-codegen",
-    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint-fix": "npm run pretest -- --fix",
+    "netlify-build": "npm run build && cd storybook-static && netlify deploy -p",
     "postinstall": "git submodule update --init --recursive || true",
     "pretest": "eslint --ignore-path .gitignore .",
     "start": "npm run storybook",
