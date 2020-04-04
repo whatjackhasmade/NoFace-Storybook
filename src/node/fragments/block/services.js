@@ -1,20 +1,18 @@
 const frag = `
-fragment ServicesData on WORDPRESS_AcfServicesBlock {
-  servicesFields: acf {
-    services {
-      colour
-      description
-      link {
-        target
-        title
-        url
-      }
+servicesFields: acf {
+  services {
+    colour
+    description
+    link {
+      target
       title
-      type
+      url
     }
-    subtitle
     title
+    type
   }
+  subtitle
+  title
 }
 `
 

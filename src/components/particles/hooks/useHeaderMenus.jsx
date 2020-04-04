@@ -1,6 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 
 export const useHeaderMenus = () => {
+  return []
   const { wordpress } = useStaticQuery(
     graphql`
       query headerMenus {

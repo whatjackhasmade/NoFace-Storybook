@@ -3,6 +3,10 @@ const hero = require(`../block/hero`)
 const services = require(`../block/services`)
 const signposts = require(`../block/signposts`)
 
+const media = require(`../media/media`)
+
+const seo = require(`../object/seo`)
+
 const GET_PAGES = `
   query GET_PAGES($first: Int) {
     wordpress {
@@ -21,59 +25,16 @@ const GET_PAGES = `
             ... on WORDPRESS_AcfServicesBlock {
               ${services}
             }
+            ... on WORDPRESS_AcfSignpostsBlock {
+              ${signposts}
+            }
           }
           featuredImage {
-            altText
-            mediaDetails {
-              sizes {
-                file
-                height
-                mimeType
-                name
-                sourceUrl
-                width
-              }
-            }
-            sourceUrl
+            ${media}
           }
           isFrontPage
           seo {
-            title
-            focuskw
-            metaDesc
-            metaKeywords
-            opengraphDescription
-            opengraphImage {
-              altText
-              mediaDetails {
-                sizes {
-                  file
-                  height
-                  mimeType
-                  name
-                  sourceUrl
-                  width
-                }
-              }
-              sourceUrl
-            }
-            opengraphTitle
-            twitterDescription
-            twitterImage {
-              altText
-              mediaDetails {
-                sizes {
-                  file
-                  height
-                  mimeType
-                  name
-                  sourceUrl
-                  width
-                }
-              }
-              sourceUrl
-            }
-            twitterTitle
+            ${seo}
           }
           status
           title

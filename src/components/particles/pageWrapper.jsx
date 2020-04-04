@@ -18,14 +18,14 @@ const PageWrapper = ({ element, props }) => (
 )
 
 const ProcessedProps = props => {
-  // const footerMenus = useFooterMenus()
-  // const headerMenus = useHeaderMenus()
+  const footerMenus = useFooterMenus()
+  const headerMenus = useHeaderMenus()
   const queries = queryString.parse(props?.location?.search)
 
   const newProps = {
     ...props,
-    // footerMenus,
-    // headerMenus,
+    footerMenus,
+    headerMenus,
     queries,
   }
 

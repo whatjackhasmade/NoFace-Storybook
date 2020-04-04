@@ -3,6 +3,10 @@ const hero = require(`../block/hero`)
 const services = require(`../block/services`)
 const signposts = require(`../block/signposts`)
 
+const media = require(`../media/media`)
+
+const seo = require(`../object/seo`)
+
 const GET_POSTS = `
   query GET_POSTS($first: Int) {
     wordpress {
@@ -25,56 +29,10 @@ const GET_POSTS = `
           content
           date
           featuredImage {
-            altText
-            mediaDetails {
-              sizes {
-                file
-                height
-                mimeType
-                name
-                sourceUrl
-                width
-              }
-            }
-            sourceUrl
+            ${media}
           }
           seo {
-            title
-            focuskw
-            metaDesc
-            metaKeywords
-            opengraphDescription
-            opengraphImage {
-              altText
-              mediaDetails {
-                sizes {
-                  file
-                  height
-                  mimeType
-                  name
-                  sourceUrl
-                  width
-                }
-              }
-              sourceUrl
-            }
-            opengraphTitle
-            twitterDescription
-            twitterImage {
-              altText
-              mediaDetails {
-                sizes {
-                  file
-                  height
-                  mimeType
-                  name
-                  sourceUrl
-                  width
-                }
-              }
-              sourceUrl
-            }
-            twitterTitle
+            ${seo}
           }
           status
           slug
