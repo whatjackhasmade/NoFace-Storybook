@@ -12,16 +12,15 @@ import Footer from "organisms/footer/footer"
 import Header from "organisms/header/header"
 
 const Page = props => {
+  const pageContext = props?.pageContext
   const uri = props?.uri
 
-  if (!uri) return <PageTemplate {...props} />
+  if (pageContext) return <PageTemplate {...props} />
 
   const { data, error, loading } = useQuery(NODE_BY_URI, {
     networkPolicy: `no-cache`,
     variables: { uri },
   })
-
-  console.log(data)
 
   if (loading) return <Loader />
   if (error) return `Error! ${error}`
@@ -30,7 +29,7 @@ const Page = props => {
 
   const context = {
     ...props.pageContext,
-    blocks: single.blocks,
+    blocks: single?.blocks,
   }
 
   return (

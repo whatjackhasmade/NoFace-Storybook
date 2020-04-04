@@ -1,29 +1,31 @@
 import React from "react"
 import queryString from "query-string"
 
-import useFooterMenuOne from "./hooks/useFooterMenuOne"
-import useFooterMenuTwo from "./hooks/useFooterMenuTwo"
-import useHeaderMenu from "./hooks/useHeaderMenu"
+import { SWRConfig } from "swr"
+import { ThemeProvider } from "styled-components"
+
+import GlobalStyle from "./globalStyle"
+import ThemeDefault from "./themeDefault"
+
+import useFooterMenus from "./hooks/useFooterMenus"
+import useHeaderMenus from "./hooks/useHeaderMenus"
 
 const PageWrapper = ({ element, props }) => (
-  <ProcessedProps {...props}>{element}</ProcessedProps>
+  <ThemeProvider theme={ThemeDefault}>
+    <GlobalStyle />
+    <ProcessedProps {...props}>{element}</ProcessedProps>
+  </ThemeProvider>
 )
 
 const ProcessedProps = props => {
-  const footerMenuOne = useFooterMenuOne()
-  const footerMenuTwo = useFooterMenuTwo()
-  const headerMenu = useHeaderMenu()
+  // const footerMenus = useFooterMenus()
+  // const headerMenus = useHeaderMenus()
   const queries = queryString.parse(props?.location?.search)
 
   const newProps = {
     ...props,
-    footerMenus: {
-      one: footerMenuOne,
-      two: footerMenuTwo,
-    },
-    headerMenus: {
-      one: headerMenu,
-    },
+    // footerMenus,
+    // headerMenus,
     queries,
   }
 

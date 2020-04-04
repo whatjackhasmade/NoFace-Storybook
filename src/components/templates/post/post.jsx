@@ -1,6 +1,4 @@
 import React from "react"
-import { Container, Row, Col } from "react-grid-system"
-import { Hidden, setConfiguration } from "react-grid-system"
 import { useQuery } from "@apollo/client"
 
 import StyledPost from "./post.styles"
@@ -16,9 +14,10 @@ import Footer from "organisms/footer/footer"
 import Header from "organisms/header/header"
 
 const Post = props => {
+  const pageContext = props?.pageContext
   const uri = props?.uri
 
-  if (!uri) return <PostTemplate {...props} />
+  if (pageContext) return <PostTemplate {...props} />
 
   const { data, error, loading } = useQuery(NODE_BY_URI, {
     networkPolicy: `no-cache`,

@@ -22,18 +22,19 @@ const Services = ({ services, subtitle, title }) => (
     <div className="grid">
       <ServicesIntro subtitle={subtitle} title={title} />
       <div className="services__items">
-        {services.map(({ colour, description, link, title, type }, i) => (
-          <SingleService
-            colour={colour}
-            index={i + 1}
-            key={`service-${title}`}
-            link={link}
-            type={type}
-          >
-            <h3>{title}</h3>
-            <p className="service__description">{description}</p>
-          </SingleService>
-        ))}
+        {services?.length > 0 &&
+          services.map(({ colour, description, link, title, type }, i) => (
+            <SingleService
+              colour={colour}
+              index={i + 1}
+              key={`service-${title}`}
+              link={link}
+              type={type}
+            >
+              <h3>{title}</h3>
+              <p className="service__description">{description}</p>
+            </SingleService>
+          ))}
       </div>
     </div>
   </StyledServices>
@@ -44,10 +45,12 @@ const ServicesIntro = ({ subtitle, title }) => {
 
   return (
     <div className="services__intro" ref={ref}>
-      <h2>
-        <AnimateLetters inView={inView}>{title}</AnimateLetters>
-      </h2>
-      <h3>{subtitle}</h3>
+      {title && (
+        <h2>
+          <AnimateLetters inView={inView}>{title}</AnimateLetters>
+        </h2>
+      )}
+      {subtitle && <h3>{subtitle}</h3>}
     </div>
   )
 }
