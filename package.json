@@ -16,9 +16,6 @@
   "browerslist": [
     "last 2 versions"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/whatjackhasmade"
-  },
   "scripts": {
     "build": "npm run lint-fix && build-storybook",
     "build-lib": "npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-png-to-lib && npm run copy-woff2-to-lib",
