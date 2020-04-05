@@ -17,6 +17,9 @@
   "browerslist": [
     "last 2 versions"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "npm run lint-fix && build-storybook",
     "build-lib": "npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-png-to-lib && npm run copy-woff2-to-lib",
@@ -44,13 +47,6 @@
     "upgrade-interactive": "npm-check --update"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "npm-check": "^5.9.2",
-    "prettier": "^1.19.1"
-  },
-  "dependencies": {
-    "@apollo/client": "^3.0.0-beta.40",
-    "@babel/core": "^7.8.7",
     "@graphql-codegen/cli": "^1.13.0",
     "@graphql-codegen/fragment-matcher": "^1.13.0",
     "@storybook/addon-actions": "^5.3.17",
@@ -62,6 +58,13 @@
     "@storybook/addon-viewport": "^5.3.17",
     "@storybook/addons": "^5.3.17",
     "@storybook/react": "^5.3.17",
+    "eslint": "^6.8.0",
+    "npm-check": "^5.9.2",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.0.0-beta.40",
+    "@babel/core": "^7.8.7",
     "apollo-boost": "^0.4.7",
     "apollo-cache-inmemory": "^1.6.5",
     "babel-core": "^6.26.3",
@@ -88,11 +91,8 @@
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "query-string": "^6.11.1",
-    "raw-loader": "^4.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-dropzone": "^10.2.1",
-    "react-grid-system": "^6.2.4",
     "react-helmet": "^5.2.1",
     "react-intersection-observer": "^8.26.1",
     "react-pose": "^4.0.10",

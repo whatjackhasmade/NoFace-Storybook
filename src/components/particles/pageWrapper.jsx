@@ -1,7 +1,6 @@
 import React from "react"
 import queryString from "query-string"
 
-import { SWRConfig } from "swr"
 import { ThemeProvider } from "styled-components"
 
 import GlobalStyle from "./globalStyle"
