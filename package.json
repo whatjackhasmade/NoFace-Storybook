@@ -1,8 +1,7 @@
 {
-  "name": "noface-storybook",
-  "private": true,
-  "version": "1.0.0",
-  "description": "",
+  "name": "noface-sb",
+  "version": "0.1.0",
+  "description": "Storybook React components for NoFace",
   "author": "Jack Pritchard (@whatjackhasmade)",
   "license": "ISC",
   "main": "index.js",
@@ -18,7 +17,7 @@
     "last 2 versions"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/whatjackhasmade"
   },
   "scripts": {
     "build": "npm run lint-fix && build-storybook",
@@ -32,6 +31,7 @@
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "d": "npm run storybook",
+    "deploy": "npm publish",
     "dev": "npm run storybook",
     "develop": "npm run storybook",
     "format": "prettier --write \"**/*.{css,gql,js,json,jsx,md,scss}\"",
